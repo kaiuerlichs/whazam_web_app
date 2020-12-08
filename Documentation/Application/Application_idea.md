@@ -15,7 +15,7 @@ In the inital meeting and continued conversation, we developed the idea of *whaz
 
 ### Design
 
-The following are example wireframes from our website mockups. Find all wireframes, additional design resources and a link to the interactive mockup [here](../Design documenation/Design.md).
+The following are example wireframes from our website mockups. Find all wireframes, additional design resources and a link to the interactive mockup [here](../Design\ documentation/Design.md)
 
 ![homepage_wireframe](./assets/homepage_desktop.png)
 ![homepage_wireframe](./assets/artist_desktop.png)
