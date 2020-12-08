@@ -2,7 +2,8 @@
 
 ## Wireframes
 
-Find wireframes and design language [here](./design_document.pdf)!
+Find wireframes and design language [here](./Design_document.pdf)!
+Use our interactive mock up [here](https://xd.adobe.com/view/5844b7ed-a11e-4b07-aa6f-3efd0a3cbc14-0d17/).
 
 ## Assets
 
