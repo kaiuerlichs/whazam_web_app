@@ -1,0 +1,65 @@
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+/* Set smooth scrolling behaviour */
+html{
+    scroll-behavior: smooth;
+}
+
+/* Classes for custom colours */
+.text-independence{
+    color: #464655!important;
+}
+.bg-independence{
+    background-color: #464655!important;
+}
+.text-bluegreen{
+    color: #7DCFB6!important;
+}
+.bg-bluegreen{
+    background-color: #7DCFB6!important;
+}
+.text-middlepink{
+    color: #E07BB9!important;
+}
+.bg-middlepink{
+    background-color: #E07BB9!important;
+}
+
+/* Custom font class for feature headings */
+.feature{
+    font-family: 'Fredoka One', cursive;
+}
+
+/* Overwrite font size for navbar brand */
+.navbar-brand{
+    font-size: 1.5rem!important;
+}
+
+/* Custom width class */
+.w-35{
+    width: 35%;
+}
+
+/* Change font for h1-h6 */
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Fredoka One', cursive!important;
+}
+
+/* Overwrite class for buttons in bluegreen colour (use with btn-secondary!) */
+.btn-bluegreen, .btn-bluegreen:hover, .btn-bluegreen:active, .btn-bluegreen:visited {
+    background-color: #7DCFB6 !important;
+}
+
+/* Custom class for footer links .footer-link */
+a.footer-link:link, a.footer-link:visited{
+    color: white;
+    text-decoration: none;
+}
+a.footer-link:hover, a.footer-link:active{
+    text-decoration: underline;
+}
+a.invisble-link{
+    color: white;
+    text-decoration: none;
+}
