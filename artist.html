@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+
+    <!-- Meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Import Vue.js and Axios from CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.2/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <!-- Import Bootstrap CSS and JS plugins -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+
+    <!-- Import custom stylesheets -->
+    <link rel="stylesheet" href="./css/master.css">
+
+    <!-- Import FontAwesome kit -->
+    <script src="https://kit.fontawesome.com/6c8f33a97a.js" crossorigin="anonymous"></script>
+
+    <!-- PWA related imports go here -->
+    <!-- will be added later -->
+
+    <!-- Set title of page -->
+    <title>[Artist name] ● whazam</title><!-- Make sure to edit this! -->
+
+</head>
+
+<body>
+
+    <!-- Create fixed-top navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-independence fixed-top">
+        <div class="container">
+            <!-- Navbar title -->
+            <a class="navbar-brand feature" href="./index.html"><i class="fas fa-compact-disc text-bluegreen"></i>
+                whazam</a>
+            <!-- Collapse toggler -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <!-- Favourites button -->
+                <div class="navbar-nav ms-auto me-5">
+                    <a class="nav-link active feature" href="./favourites.html"><i
+                            class="far fa-heart text-middlepink"></i> Your favourites</a>
+                </div>
+                <!-- Search box for large screens -->
+                <div class="input-group w-35 d-none d-lg-flex">
+                    <input type="text" class="form-control form-control-sm"
+                        placeholder="Search for your favourite artist...">
+                    <button class="btn btn-outline-light" type="button" id="navbarSearchButton"><i
+                            class="fas fa-search text-bluegreen"></i></button>
+                </div>
+                <!-- Search box for small screens (collapsed) -->
+                <div class="input-group d-lg-none">
+                    <input type="text" class="form-control form-control-sm"
+                        placeholder="Search for your favourite artist...">
+                    <button class="btn btn-outline-light" type="button" id="navbarSearchButton"><i
+                            class="fas fa-search text-bluegreen"></i></button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content should be placed inside this container to ensure the correct top margins and padding to avoid navbar overlap-->
+    <main class="container-fluid mt-5 pt-3" id="top">
+        <!-- 
+
+            Create your page content here (you can create a normal container within this fluid container if needed). 
+            Make sure to...
+
+            1.  Add your custom stylesheets in head (don't use master.css for styling that only affects your page)
+            2.  Add your custom JS scripts in the section below
+            3.  Change the title of this webpage (may need to happen reactively for some, i.e. through JS)
+
+         -->
+    </main>
+
+    <!-- Create footer -->
+    <footer class="container-fluid text-light bg-independence">
+        <div class="container p-5">
+            <div class="row">
+                <!-- Logo and app area for large screens -->
+                <section class="d-none d-md-block col-md-3 text-start my-auto">
+                    <a href="./index.html" class="invisble-link"><h4><i class="fas fa-compact-disc text-bluegreen"></i> whazam</h4></a>
+                    <a class="btn btn-secondary btn-bluegreen" href="./app.html">Install the app</button></a>
+                </section>
+                <!-- Logo and app area for small screens -->
+                <section class="d-md-none col-12 text-center">
+                    <a href="./index.html" class="invisble-link"><h4><i class="fas fa-compact-disc text-bluegreen"></i> whazam</h4></a>
+                    <a class="btn btn-secondary btn-bluegreen" href="./app.html">Install the app</button></a>
+                </section>
+                <!-- Link area for large screens -->
+                <section class="d-none d-md-block offset-md-6 col-md-3 text-end">
+                    <h5>Links to click!</h5>
+                    <a class="footer-link" href="#top">Back to top</a><br>
+                    <a class="footer-link" href="./favourites.html">Your Favourites</a><br>
+                    <a class="footer-link" href="./about.html">About Us</a><br>
+                    <a class="footer-link" href="./legal.html">Legal bits</a>
+                </section>
+                <!-- Link area for small screens -->
+                <section class="d-md-none col-12 text-center mt-5">
+                    <h5>Links to click!</h5>
+                    <a class="footer-link" href="#top">Back to top</a><br>
+                    <a class="footer-link" href="./favourites.html">Your Favourites</a><br>
+                    <a class="footer-link" href="./about.html">About Us</a><br>
+                    <a class="footer-link" href="./legal.html">Legal bits</a>
+                </section>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom script imports -->
+    <!-- will be added later -->
+
+</body>
+
+</html>
