@@ -25,6 +25,18 @@ html{
 .bg-middlepink{
     background-color: #E07BB9!important;
 }
+.text-lightgrey{
+    color: #E5E5E5!important;
+}
+.bg-lightgrey{
+    background-color: #E5E5E5!important;
+}
+.text-darkgrey{
+    color: #434343!important;
+}
+.bg-darkgrey{
+    background-color: #434343!important;
+}
 
 /* Custom font class for feature headings */
 .feature{
