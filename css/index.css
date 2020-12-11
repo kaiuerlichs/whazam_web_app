@@ -1,15 +1,11 @@
-.background {
-  background:  url('../assets/index/indexBackground.jpg') center / cover no-repeat!important;
-}
-
-#gradient{
-  background-image: linear-gradient(to right, rgba(255,0,255,0.25), rgba(0,0,0,0.5),  rgba(0,0,0,1));
-  float: right;
-  height: 100%;
-  max-width: 100%;
-}
+.background { background: linear-gradient(to right, rgba(255,0,255,0.25), rgba(0,0,0,0.5), rgba(0,0,0,1)), url('../assets/index/indexBackground.jpg') center / cover no-repeat!important; }
 
 h2{
-  padding-top: 300px;
+  font-size: 70px;
   color: #ffffff;
+}
+
+.indexMain{
+  margin:50px;
+  padding-right: 5px;
 }
