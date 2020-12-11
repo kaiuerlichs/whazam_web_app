@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+
+  <!-- Meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Import Vue.js and Axios from CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.2/vue.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+  <!-- Import Bootstrap CSS and JS plugins -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+  <!-- Import custom stylesheets -->
+  <link rel="stylesheet" href="track-page.css">
+
+  <!-- Import FontAwesome kit -->
+  <script src="https://kit.fontawesome.com/6c8f33a97a.js" crossorigin="anonymous"></script>
+
+  <!-- PWA related imports go here -->
+  <!-- will be added later -->
+
+  <!-- Set title of page -->
+  <title>Track Page ● whazam</title><!-- Make sure to edit this! -->
+
+</head>
+
+<body>
+  <!-- Create fixed-top navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-independence fixed-top">
+    <div class="container">
+      <!-- Navbar title -->
+      <a class="navbar-brand feature" href="./index.html"><i class="fas fa-compact-disc text-bluegreen"></i>
+        whazam</a>
+      <!-- Collapse toggler -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <!-- Favourites button -->
+        <div class="navbar-nav ms-auto me-5">
+          <a class="nav-link active feature" href="./favourites.html"><i class="far fa-heart text-middlepink"></i> Your favourites</a>
+        </div>
+        <!-- Search box for large screens -->
+        <div class="input-group w-35 d-none d-lg-flex">
+          <input type="text" class="form-control form-control-sm" placeholder="Search for your favourite artist...">
+          <button class="btn btn-outline-light" type="button" id="navbarSearchButton"><i class="fas fa-search text-bluegreen"></i></button>
+        </div>
+        <!-- Search box for small screens (collapsed) -->
+        <div class="input-group d-lg-none">
+          <input type="text" class="form-control form-control-sm" placeholder="Search for your favourite artist...">
+          <button class="btn btn-outline-light" type="button" id="navbarSearchButton"><i class="fas fa-search text-bluegreen"></i></button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container-fluid mt-5 p-0" id="top">
+
+
+
+
+      <!--container for light grey area-->
+<div class="container-fluid  bg-lightgrey">
+<div class="container">
+
+
+      <div class="row mt-3">
+        <div class="offset-1 offset-lg-0 col-3">
+
+<!--Rnadom album cover just now for sizing-->
+            <img class="album-pic img-fluid pt-3" src="data:image/jpeg;base64,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" alt="Album Cover">
+          </div>
+
+          <!--song title and album/artist-->
+        <div class="col-7 col-lg-8 my-auto">
+          <h1 class="song-title">Song Title<i class="far fa-heart fa-sm text-middlepink"></i></h1>
+          <h2 class="album-artist">Album/Artist</h2>
+        </div>
+      </div>
+      </div>
+    </div>
+
+
+
+<div class="container">
+
+
+      <!--song info heading-->
+      <div class="row bg-white">
+        <div class="col 6 mt-2">
+          <h2>Song Information</h2>
+        </div>
+
+        <!--lyrics heading-->
+        <div class="col 6 mt-2">
+          <h2>Lyrics</h2>
+        </div>
+      </div>
+
+      <!--box for song info-->
+      <div class="row bg-white">
+        <div class="col-6">
+          <div class="box" id="info">
+            <p>Put info about track here. Theres not a lot but some have youtube links we can include</p>
+          </div>
+        </div>
+
+        <!--box for lyrics-->
+        <div class="col-6">
+          <div class="box" id="lyrics">
+            <p>Lyrcis will go here</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Create footer -->
+  <footer class="container-fluid text-light bg-independence">
+    <div class="container p-5">
+      <div class="row">
+        <!-- Logo and app area for large screens -->
+        <section class="d-none d-md-block col-md-3 text-start my-auto">
+          <a href="./index.html" class="invisble-link">
+            <h4><i class="fas fa-compact-disc text-bluegreen"></i> whazam</h4>
+          </a>
+          <a class="btn btn-secondary btn-bluegreen" href="./app.html">Install the app</button></a>
+        </section>
+        <!-- Logo and app area for small screens -->
+        <section class="d-md-none col-12 text-center">
+          <a href="./index.html" class="invisble-link">
+            <h4><i class="fas fa-compact-disc text-bluegreen"></i> whazam</h4>
+          </a>
+          <a class="btn btn-secondary btn-bluegreen" href="./app.html">Install the app</button></a>
+        </section>
+        <!-- Link area for large screens -->
+        <section class="d-none d-md-block offset-md-6 col-md-3 text-end">
+          <h5>Links to click!</h5>
+          <a class="footer-link" href="#top">Back to top</a><br>
+          <a class="footer-link" href="./favourites.html">Your Favourites</a><br>
+          <a class="footer-link" href="./about.html">About Us</a><br>
+          <a class="footer-link" href="./legal.html">Legal bits</a>
+        </section>
+        <!-- Link area for small screens -->
+        <section class="d-md-none col-12 text-center mt-5">
+          <h5>Links to click!</h5>
+          <a class="footer-link" href="#top">Back to top</a><br>
+          <a class="footer-link" href="./favourites.html">Your Favourites</a><br>
+          <a class="footer-link" href="./about.html">About Us</a><br>
+          <a class="footer-link" href="./legal.html">Legal bits</a>
+        </section>
+      </div>
+    </div>
+  </footer>
+
+
+</body>
+
+</html>
