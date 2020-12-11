@@ -5,22 +5,22 @@ h2.album-artist{
 /*sets bg colour and size of grey boxes*/
 /*there wasn't a middle grey shade for these boxes like in wireframes so i added one*/
 .box{
-  height: 400px;
-  padding: 10px;
-  margin-bottom: 20px;
+  height: auto;
+
 }
 /*sets the heart icon pink*/
 i{
   color: #E07BB9;
-  padding-left: 10px;
-
 }
-
+p{
+  font-family: 'Fredoka One', cursive!important;
+}
 /*sets the size of the img*/
 img.album-pic{
   height: auto;
   width: auto;
   float:left;
+  display: flex;
   padding: 10px;
 
 }
