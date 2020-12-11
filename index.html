@@ -72,29 +72,20 @@
 
     <!-- Content should be placed inside this container to ensure the correct top margins and padding to avoid navbar overlap-->
     <main class="container-fluid pt-5 p-0 background vh-100" id="top">
-      <div class="container pt-3">
-        <h2>Your favourite music is right here!</h2>
-      </div>
 
-
-
-
-
-
-
-
-
-
-        <!--
-
-            Create your page content here (you can create a normal container within this fluid container if needed).
-            Make sure to...
-
-            1.  Add your custom stylesheets in head (don't use master.css for styling that only affects your page)
-            2.  Add your custom JS scripts in the section below
-            3.  Change the title of this webpage (may need to happen reactively for some, i.e. through JS)
-
-         -->
+        <div class="container" id="gradient">
+          <div class="row">
+            <div class="col-md-6 offset-md-6">
+              <h2>Your favourite music is right here!</h2>
+              <form class="" action="index.html" method="post">
+                <input type="text" class="form-control form-control-sm"
+                    placeholder="Search for your favourite artist...">
+                <button class="btn btn-outline-light" type="button" id="search"><i
+                        class="fas fa-search text-bluegreen"></i></button>
+              </form>
+            </div>
+          </div>
+        </div>
     </main>
 
     <!-- Create footer -->
