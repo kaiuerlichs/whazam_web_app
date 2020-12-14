@@ -16,7 +16,6 @@ i{
 /*sets the size of the img*/
 img.album-pic{
   height: auto;
-  width: auto;
   float:left;
   display: flex;
   padding: 10px;
