@@ -12,9 +12,7 @@ h2.album-artist{
 i{
   color: #E07BB9;
 }
-p{
-  font-family: 'Fredoka One', cursive!important;
-}
+
 /*sets the size of the img*/
 img.album-pic{
   height: auto;
