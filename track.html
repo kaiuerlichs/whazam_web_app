@@ -82,7 +82,7 @@
 
           <!--song title and album/artist-->
         <div class="col-7 col-lg-8 my-auto">
-          <h1 class="song-title">{{track.strTrack}}<i class="far fa-heart fa-sm text-middlepink ps-2"></i></h1>
+          <h1 class="song-title">{{track.strTrack}}<a v-if="!isFavourite" class="clickable" v-on:click="favourite()"><i class="far fa-heart fa-sm text-middlepink ps-2"></i></a></h1>
           <h2 class="album-artist">{{track.strAlbum}}/{{track.strArtist}}</h2>
         </div>
       </div>
