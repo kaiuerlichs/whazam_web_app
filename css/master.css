@@ -75,3 +75,8 @@ a.invisble-link{
     color: white;
     text-decoration: none;
 }
+
+/* Make things look clickable */
+.clickable{
+    cursor: pointer;
+}
