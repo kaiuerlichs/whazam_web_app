@@ -3,153 +3,150 @@
 
 <head>
 
-    <!-- Meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Import Vue.js and Axios from CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.2/vue.js"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <!-- Import Vue.js and Axios from CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.2/vue.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-    <!-- Import Bootstrap CSS and JS plugins -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-        crossorigin="anonymous"></script>
+  <!-- Import Bootstrap CSS and JS plugins -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 
-    <!-- Import custom stylesheets -->
-    <link rel="stylesheet" href="./css/aboutus.css">
+  <!-- Import custom stylesheets -->
+  <link rel="stylesheet" href="./css/aboutus.css">
 
-    <!-- Import FontAwesome kit -->
-    <script src="https://kit.fontawesome.com/6c8f33a97a.js" crossorigin="anonymous"></script>
+  <!-- Import FontAwesome kit -->
+  <script src="https://kit.fontawesome.com/6c8f33a97a.js" crossorigin="anonymous"></script>
 
-    <!-- PWA related imports go here -->
-    <!-- will be added later -->
+  <!-- PWA related imports go here -->
+  <!-- will be added later -->
 
-    <!-- Set title of page -->
-    <title>About Us</title><!-- Make sure to edit this! -->
+  <!-- Set title of page -->
+  <title>About Us</title><!-- Make sure to edit this! -->
 
 </head>
 
 <body id="top">
 
-    <!-- Create fixed-top navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-independence fixed-top">
-        <div class="container">
-            <!-- Navbar title -->
-            <a class="navbar-brand feature" href="./index.html"><i class="fas fa-compact-disc text-bluegreen"></i>
-                whazam</a>
-            <!-- Collapse toggler -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <!-- Favourites button -->
-                <div class="navbar-nav ms-auto me-5">
-                    <a class="nav-link active feature" href="./favourites.html"><i
-                            class="far fa-heart text-middlepink"></i> Your favourites</a>
-                </div>
-                <!-- Search box for large screens -->
-                <div class="input-group w-35 d-none d-lg-flex">
-                    <input type="text" class="form-control form-control-sm"
-                        placeholder="Search for your favourite artist...">
-                    <button class="btn btn-outline-light" type="button" id="navbarSearchButton"><i
-                            class="fas fa-search text-bluegreen"></i></button>
-                </div>
-                <!-- Search box for small screens (collapsed) -->
-                <div class="input-group d-lg-none">
-                    <input type="text" class="form-control form-control-sm"
-                        placeholder="Search for your favourite artist...">
-                    <button class="btn btn-outline-light" type="button" id="navbarSearchButton"><i
-                            class="fas fa-search text-bluegreen"></i></button>
-                </div>
-            </div>
+  <!-- Create fixed-top navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-independence fixed-top">
+    <div class="container">
+      <!-- Navbar title -->
+      <a class="navbar-brand feature" href="./index.html"><i class="fas fa-compact-disc text-bluegreen"></i>
+        whazam</a>
+      <!-- Collapse toggler -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <!-- Favourites button -->
+        <div class="navbar-nav ms-auto me-5">
+          <a class="nav-link active feature" href="./favourites.html"><i class="far fa-heart text-middlepink"></i> Your favourites</a>
         </div>
-    </nav>
+        <!-- Search box for large screens -->
+        <div class="input-group w-35 d-none d-lg-flex">
+          <input type="text" class="form-control form-control-sm" placeholder="Search for your favourite artist...">
+          <button class="btn btn-outline-light" type="button" id="navbarSearchButton"><i class="fas fa-search text-bluegreen"></i></button>
+        </div>
+        <!-- Search box for small screens (collapsed) -->
+        <div class="input-group d-lg-none">
+          <input type="text" class="form-control form-control-sm" placeholder="Search for your favourite artist...">
+          <button class="btn btn-outline-light" type="button" id="navbarSearchButton"><i class="fas fa-search text-bluegreen"></i></button>
+        </div>
+      </div>
+    </div>
+  </nav>
 
+  <!-- Main section -->
+  <main class="container-fluid mt-5 p-0 pt-3" id="top">
+    <!-- Laed section of the page -->
+    <section class="py-5 text-center container">
+      <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+          <h1 class="fw-light">About</h1>
+          <p class="lead text-muted pt-3">We provide you with albums, song and lyrics to the artist of your choice. A completely original idea never done before *cough* *cough*</p>
+        </div>
+      </div>
+    </section>
 
-    <main class="container-fluid mt-5 p-0 pt-3" id="top">
+<!-- Container for the description of the web page and the team. -->
+    <div class="container">
+      <!-- featurette divider to make the page look organized and to divide the content -->
+      <hr class="featurette-divider">
+      <div class="row featurette">
+        <div class="col-md-7">
+          <!-- about the team -->
+          <h2 class="featurette-heading aboutHeading">About the team.</h2>
+          <p class="lead">We are a bunch of Web Development students from the University of Dundee and we programmed this brilliant masterpiece of web-app. Thankfully, our lecturer Mike taught us very well and got us through this “unique” first
+            semester at uni.</p>
+        </div>
+        <div class="col-md-5 ps-3 aboutImage">
+          <img src="https://upload.wikimedia.org/wikipedia/en/c/cb/University_of_Dundee_shield.png" alt="Logo">
+        </div>
+      </div>
 
-       <section class="py-5 text-center container">
-          <div class="row py-lg-5">
-            <div class="col-lg-6 col-md-8 mx-auto">
-              <h1 class="fw-light">About</h1>
-              <p class="lead text-muted pt-3">We provide you with albums, song and lyrics to the artist of your choice. A completely original idea never done before *cough* *cough*</p>
-            </div>
-          </div>
+      <!-- featurette divider to make the page look organized and to divide the content -->
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-8 order-md-2">
+          <h2 class="featurette-heading aboutHeading2">About the website.</h2>
+          <p class="lead">This web app is built using HTML, CSS and JavaScript, allowing us to create a unique and detailed user experience by making use of the Bootstrap CSS framework and the vue.js library. By taking data from the “TheAudioDB” and “lyrics.ovh” APIs, we show our users exactly what they want to know about their favourite artists and music.</p>
+        </div>
+        <div class="col-md-4 col-lg-3 order-md-1 aboutImage">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShHS_3r0f47aiJAjmfrLSKwmDKXX-XczX8Bw&usqp=CAU" alt="Logo">
+        </div>
+      </div>
+
+      <!-- featurette divider to make the page look organized and to divide the content -->
+      <hr class="featurette-divider">
+
+    </div>
+  </main>
+
+  <!-- Create footer -->
+  <footer class="container-fluid text-light bg-independence">
+    <div class="container p-5">
+      <div class="row">
+        <!-- Logo and app area for large screens -->
+        <section class="d-none d-md-block col-md-3 text-start my-auto">
+          <a href="./index.html" class="invisble-link">
+            <h4><i class="fas fa-compact-disc text-bluegreen"></i> whazam</h4>
+          </a>
+          <a class="btn btn-secondary btn-bluegreen" href="./app.html">Install the app.</a>
         </section>
+        <!-- Logo and app area for small screens -->
+        <section class="d-md-none col-12 text-center">
+          <a href="./index.html" class="invisble-link">
+            <h4><i class="fas fa-compact-disc text-bluegreen"></i> whazam</h4>
+          </a>
+          <a class="btn btn-secondary btn-bluegreen" href="./app.html">Install the app.</a>
+        </section>
+        <!-- Link area for large screens -->
+        <section class="d-none d-md-block offset-md-6 col-md-3 text-end">
+          <h5>Links to click!</h5>
+          <a class="footer-link" href="#top">Back to top</a><br>
+          <a class="footer-link" href="./favourites.html">Your Favourites</a><br>
+          <a class="footer-link" href="./about.html">About Us</a><br>
+          <a class="footer-link" href="./legal.html">Legal bits</a>
+        </section>
+        <!-- Link area for small screens -->
+        <section class="d-md-none col-12 text-center mt-5">
+          <h5>Links to click!</h5>
+          <a class="footer-link" href="#top">Back to top</a><br>
+          <a class="footer-link" href="./favourites.html">Your Favourites</a><br>
+          <a class="footer-link" href="./about.html">About Us</a><br>
+          <a class="footer-link" href="./legal.html">Legal bits</a>
+        </section>
+      </div>
+    </div>
+  </footer>
 
-        <div class="container">
-          <hr class="featurette-divider">
-
-          <div class="row featurette">
-            <div class="col-md-7">
-              <h2 class="featurette-heading aboutHeading">About the team.</h2>
-              <p class="lead">We are a bunch of Web Development students from the University of Dundee and we programmed this brilliant masterpiece of web-app. Thankfully, our lecturer Mike taught us very well and got us through this “unique” first semester at uni.</p>
-            </div>
-            <div class="col-md-5 ps-3 aboutImage">
-              <img src="https://upload.wikimedia.org/wikipedia/en/c/cb/University_of_Dundee_shield.png" alt="Logo">
-            </div>
-          </div>
-
-          <hr class="featurette-divider">
-
-          <div class="row featurette">
-            <div class="col-md-8 order-md-2">
-              <h2 class="featurette-heading aboutHeading2">About the website.</h2>
-              <p class="lead">This web app is built using HTML, CSS and JavaScript, allowing us to create a unique and detailed user experience by making use of the Bootstrap CSS framework and the vue.js library. By taking data from the “TheAudioDB” and “lyrics.ovh” APIs, we show our users exactly what they want to know about their favourite artists and music.</p>
-            </div>
-            <div class="col-md-4 col-lg-3 order-md-1 aboutImage">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShHS_3r0f47aiJAjmfrLSKwmDKXX-XczX8Bw&usqp=CAU" alt="Logo">
-
-            </div>
-          </div>
-
-          <hr class="featurette-divider">
-
-
-        </div>
-
-    </main>
-
-    <!-- Create footer -->
-    <footer class="container-fluid text-light bg-independence">
-        <div class="container p-5">
-            <div class="row">
-                <!-- Logo and app area for large screens -->
-                <section class="d-none d-md-block col-md-3 text-start my-auto">
-                    <a href="./index.html" class="invisble-link"><h4><i class="fas fa-compact-disc text-bluegreen"></i> whazam</h4></a>
-                    <a class="btn btn-secondary btn-bluegreen" href="./app.html">Install the app.</a>
-                </section>
-                <!-- Logo and app area for small screens -->
-                <section class="d-md-none col-12 text-center">
-                    <a href="./index.html" class="invisble-link"><h4><i class="fas fa-compact-disc text-bluegreen"></i> whazam</h4></a>
-                    <a class="btn btn-secondary btn-bluegreen" href="./app.html">Install the app.</a>
-                </section>
-                <!-- Link area for large screens -->
-                <section class="d-none d-md-block offset-md-6 col-md-3 text-end">
-                    <h5>Links to click!</h5>
-                    <a class="footer-link" href="#top">Back to top</a><br>
-                    <a class="footer-link" href="./favourites.html">Your Favourites</a><br>
-                    <a class="footer-link" href="./about.html">About Us</a><br>
-                    <a class="footer-link" href="./legal.html">Legal bits</a>
-                </section>
-                <!-- Link area for small screens -->
-                <section class="d-md-none col-12 text-center mt-5">
-                    <h5>Links to click!</h5>
-                    <a class="footer-link" href="#top">Back to top</a><br>
-                    <a class="footer-link" href="./favourites.html">Your Favourites</a><br>
-                    <a class="footer-link" href="./about.html">About Us</a><br>
-                    <a class="footer-link" href="./legal.html">Legal bits</a>
-                </section>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Custom script imports -->
-    <!-- will be added later -->
+  <!-- Custom script imports -->
+  <!-- will be added later -->
 
 </body>
 
