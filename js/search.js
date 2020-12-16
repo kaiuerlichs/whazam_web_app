@@ -5,7 +5,7 @@ document.getElementById('navbarSearchButton').addEventListener("click", function
   // inputbox value
   var toSearch = search.value;
   // Adds the value to the url to be used in api call
-  let url = "'./track.html?s=' +toSearch";
+  let url = "'./artist.html?s=' +toSearch";
   // changes the location to the url
   window.location.assign("url")
 })
