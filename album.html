@@ -2,20 +2,50 @@
 <html lang="en" dir="ltr">
 
 <head>
-  <!-- CSS for the table elements and headings -->
-  <style>
+    <!-- CSS for the table elements and headings -->
+    <style>
+        th {
+            text-align: justify;
+        }
 
-  th {
-    text-align:justify;
-  }
-  table{border: 5px solid;float:left;table-layout:fixed; height:400px;width:40%;display:inline-block;text-align: justify; margin-bottom:50px; }
-  table.left{float:left;margin-left:80px;}
-  table.right{float:right;margin-right:80px;}
-  .albuminfo .tracklist{display: inline;padding:20px;}
-  .albuminfo{float:left;width:40%;margin-left: 80px;}
-  .tracklist{float:right;width:40%;margin-right: 80px;}
+        table {
+            border: 5px solid;
+            float: left;
+            table-layout: fixed;
+            height: 400px;
+            width: 40%;
+            display: inline-block;
+            text-align: justify;
+            margin-bottom: 50px;
+        }
 
-  </style>
+        table.left {
+            float: left;
+            margin-left: 80px;
+        }
+
+        table.right {
+            float: right;
+            margin-right: 80px;
+        }
+
+        .albuminfo .tracklist {
+            display: inline;
+            padding: 20px;
+        }
+
+        .albuminfo {
+            float: left;
+            width: 40%;
+            margin-left: 80px;
+        }
+
+        .tracklist {
+            float: right;
+            width: 40%;
+            margin-right: 80px;
+        }
+    </style>
 
     <!-- Meta tags -->
     <meta charset="utf-8">
@@ -42,7 +72,7 @@
     <!-- will be added later -->
 
     <!-- Set title of page -->
-    <title>[name of album]</title><!-- Make sure to edit this! -->
+    <title>[name of album] ● whazam</title><!-- Make sure to edit this! -->
 
 </head>
 
@@ -100,7 +130,7 @@
                     <!-- Album name followed by the artists name with a favourite button -->
                     <div class="col-7 col-lg-8 my-auto ps-4">
                         <h1>Album name
-                        <a href="#"><i class="far fa-heart text-middlepink"></i></a>
+                            <a href="#"><i class="far fa-heart text-middlepink"></i></a>
                         </h1>
                         <h2>by artist</h2>
                     </div>
@@ -108,71 +138,69 @@
                 </div>
             </div>
         </section>
-<!--Lower section for the ablum details and details of tracks -->
+        <!--Lower section for the ablum details and details of tracks -->
         <div class="container py-5">
             <div class="row">
 
-<!-- Heading that appear above the two tables -->
+                <!-- Heading that appear above the two tables -->
                 <section class="col-12 col-lg-12  ">
-                  <div class="albuminfo">
-                  <h2>Album information</h2>
-                  </div>
-                  <div class="tracklist">
-                  <h2>Track List</h2>
-                  </div>
+                    <div class="albuminfo">
+                        <h2>Album information</h2>
+                    </div>
+                    <div class="tracklist">
+                        <h2>Track List</h2>
+                    </div>
                 </section>
                 <!-- Table that will appear on the left hand side of the screen -->
                 <section class="col-12 col-lg-6 ">
 
-                  <h5>
-                  <table class="left">
+                    <h5>
+                        <table class="left">
 
-                    <tr>
+                            <tr>
 
-                      <th>Genres:</th>
-                      <td>1</td>
-                    </tr>
-                    <tr>
-                      <th>Styles:</th>
-                      <td>2</td>
-                    </tr>
-                    <tr>
-                      <th>Label:</th>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <th>Release date:</th>
+                                <th>Genres:</th>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <th>Styles:</th>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <th>Label:</th>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>Release date:</th>
 
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <th>Description:</th>
-                      <td></td>
-                    </tr>
-                    <!-- Table that will appear on the left hand side of the screen -->
-                  <table class="right">
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>Description:</th>
+                                <td></td>
+                            </tr>
+                            <!-- Table that will appear on the left hand side of the screen -->
+                            <table class="right">
 
-                    <tr>
+                                <tr>
 
-                      <th>Track number:</th>
-                      <td>1</td>
-                    </tr>
-                    <tr>
-                      <th>Title:</th>
-                      <td>2</td>
-                    </tr>
-                    <tr>
-                      <th>Label:</th>
-                      <td></td>
-                    </tr>
-                  </h5>
-                  </div>
-                  </div>
-                  </section>
+                                    <th>Track number:</th>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <th>Title:</th>
+                                    <td>2</td>
+                                </tr>
+                                <tr>
+                                    <th>Label:</th>
+                                    <td></td>
+                                </tr>
+                    </h5>
+                </section>
+            </div>
+        </div>
 
-
-
-</main>
+    </main>
     <!-- Create footer -->
     <footer class="container-fluid text-light bg-independence">
         <div class="container p-5">
