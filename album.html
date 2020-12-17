@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <!-- CSS for the table elements and headings -->
+  <style>
+
+  th {
+    text-align:justify;
+  }
+  table{border: 5px solid;float:left;table-layout:fixed; height:400px;width:40%;display:inline-block;text-align: justify; margin-bottom:50px; }
+  table.left{float:left;margin-left:80px;}
+  table.right{float:right;margin-right:80px;}
+  .albuminfo .tracklist{display: inline;padding:20px;}
+  .albuminfo{float:left;width:40%;margin-left: 80px;}
+  .tracklist{float:right;width:40%;margin-right: 80px;}
+
+  </style>
+
+    <!-- Meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Import Vue.js and Axios from CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.2/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <!-- Import Bootstrap CSS and JS plugins -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+
+    <!-- Import custom stylesheets -->
+    <link rel="stylesheet" href="./css/master.css">
+
+    <!-- Import FontAwesome kit -->
+    <script src="https://kit.fontawesome.com/6c8f33a97a.js" crossorigin="anonymous"></script>
+
+    <!-- PWA related imports go here -->
+    <!-- will be added later -->
+
+    <!-- Set title of page -->
+    <title>[name of album]</title><!-- Make sure to edit this! -->
+
+</head>
+
+<body>
+
+    <!-- Create fixed-top navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-independence fixed-top">
+        <div class="container">
+            <!-- Navbar title -->
+            <a class="navbar-brand feature" href="./index.html"><i class="fas fa-compact-disc text-bluegreen"></i>
+                whazam</a>
+            <!-- Collapse toggler -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <!-- Favourites button -->
+                <div class="navbar-nav ms-auto me-5">
+                    <a class="nav-link active feature" href="./favourites.html"><i
+                            class="far fa-heart text-middlepink"></i> Your favourites</a>
+                </div>
+                <!-- Search box for large screens -->
+                <div class="input-group w-35 d-none d-lg-flex">
+                    <input type="text" class="form-control form-control-sm"
+                        placeholder="Search for your favourite artist...">
+                    <button class="btn btn-outline-light" type="button" id="navbarSearchButton"><i
+                            class="fas fa-search text-bluegreen"></i></button>
+                </div>
+                <!-- Search box for small screens (collapsed) -->
+                <div class="input-group d-lg-none">
+                    <input type="text" class="form-control form-control-sm"
+                        placeholder="Search for your favourite artist...">
+                    <button class="btn btn-outline-light" type="button" id="navbarSearchButton"><i
+                            class="fas fa-search text-bluegreen"></i></button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content should be placed inside this container to ensure the correct top margins and padding to avoid navbar overlap-->
+    <main class="container-fluid mt-5 p-0 pt-3" id="top">
+
+        <!-- Top section to hold the album cover and album name and artist of said album -->
+        <section class="container-fluid bg-lightgrey p-0">
+            <div class="container py-5">
+                <div class="row">
+
+                    <!-- Album cover -->
+                    <div class="offset-1 offset-lg-0 col-3">
+                        <img src="https://picsum.photos/seed/picsum/400/400" alt="" class="img-fluid rounded">
+                    </div>
+
+
+                    <!-- Album name followed by the artists name with a favourite button -->
+                    <div class="col-7 col-lg-8 my-auto ps-4">
+                        <h1>Album name
+                        <a href="#"><i class="far fa-heart text-middlepink"></i></a>
+                        </h1>
+                        <h2>by artist</h2>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+<!--Lower section for the ablum details and details of tracks -->
+        <div class="container py-5">
+            <div class="row">
+
+<!-- Heading that appear above the two tables -->
+                <section class="col-12 col-lg-12  ">
+                  <div class="albuminfo">
+                  <h2>Album information</h2>
+                  </div>
+                  <div class="tracklist">
+                  <h2>Track List</h2>
+                  </div>
+                </section>
+                <!-- Table that will appear on the left hand side of the screen -->
+                <section class="col-12 col-lg-6 ">
+
+                  <h5>
+                  <table class="left">
+
+                    <tr>
+
+                      <th>Genres:</th>
+                      <td>1</td>
+                    </tr>
+                    <tr>
+                      <th>Styles:</th>
+                      <td>2</td>
+                    </tr>
+                    <tr>
+                      <th>Label:</th>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <th>Release date:</th>
+
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <th>Description:</th>
+                      <td></td>
+                    </tr>
+                    <!-- Table that will appear on the left hand side of the screen -->
+                  <table class="right">
+
+                    <tr>
+
+                      <th>Track number:</th>
+                      <td>1</td>
+                    </tr>
+                    <tr>
+                      <th>Title:</th>
+                      <td>2</td>
+                    </tr>
+                    <tr>
+                      <th>Label:</th>
+                      <td></td>
+                    </tr>
+                  </h5>
+                  </div>
+                  </div>
+                  </section>
+
+
+
+</main>
+    <!-- Create footer -->
+    <footer class="container-fluid text-light bg-independence">
+        <div class="container p-5">
+            <div class="row">
+
+                <!-- Logo and app area for large screens -->
+                <section class="d-none d-md-block col-md-3 text-start my-auto">
+                    <a href="./index.html" class="invisble-link">
+                        <h4><i class="fas fa-compact-disc text-bluegreen"></i> whazam</h4>
+                    </a>
+                    <a class="btn btn-secondary btn-bluegreen" href="./app.html">Install the app</button></a>
+                </section>
+
+                <!-- Logo and app area for small screens -->
+                <section class="d-md-none col-12 text-center">
+                    <a href="./index.html" class="invisble-link">
+                        <h4><i class="fas fa-compact-disc text-bluegreen"></i> whazam</h4>
+                    </a>
+                    <a class="btn btn-secondary btn-bluegreen" href="./app.html">Install the app</button></a>
+                </section>
+
+                <!-- Link area for large screens -->
+                <section class="d-none d-md-block offset-md-6 col-md-3 text-end">
+                    <h5>Links to click!</h5>
+                    <a class="footer-link" href="#top">Back to top</a><br>
+                    <a class="footer-link" href="./favourites.html">Your Favourites</a><br>
+                    <a class="footer-link" href="./about.html">About Us</a><br>
+                    <a class="footer-link" href="./legal.html">Legal bits</a>
+                </section>
+
+                <!-- Link area for small screens -->
+                <section class="d-md-none col-12 text-center mt-5">
+                    <h5>Links to click!</h5>
+                    <a class="footer-link" href="#top">Back to top</a><br>
+                    <a class="footer-link" href="./favourites.html">Your Favourites</a><br>
+                    <a class="footer-link" href="./about.html">About Us</a><br>
+                    <a class="footer-link" href="./legal.html">Legal bits</a>
+                </section>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom script imports -->
+    <!-- will be added later -->
+
+</body>
+
+</html>
