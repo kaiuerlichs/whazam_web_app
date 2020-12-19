@@ -1,9 +1,7 @@
 // gets the button id and adds event listener function that runs when clicked
-document.getElementById('navbarSearchButton').addEventListener("click", function(){
-  // input box
-  var search = document.getElementById('navbarSearchInput');
+document.getElementById('navbarSearchButtonDesktop').addEventListener("click", function(){
   // inputbox value
-  var toSearch = search.value;
+  var toSearch =  document.getElementById('navbarSearchInputDesktop').value;
   if(toSearch !== ""){
     // Adds the value to the url to be used in api call
     let url = "artist.html?s=" + toSearch;
@@ -13,11 +11,9 @@ document.getElementById('navbarSearchButton').addEventListener("click", function
 })
 
 // gets the button id and adds event listener function that runs when clicked
-document.getElementById('indexSearchButton').addEventListener("click", function(){
-  // input box
-  var search = document.getElementById('indexSearchInput');
+document.getElementById('indexSearchButtonMobile').addEventListener("click", function(){
   // inputbox value
-  var toSearch = search.value;
+  var toSearch = document.getElementById('indexSearchInputMobile').value;
   if(toSearch !== ""){
     // Adds the value to the url to be used in api call
     let url = "artist.html?s=" + toSearch;
