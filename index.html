@@ -12,8 +12,11 @@
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
   <!-- Import Bootstrap CSS and JS plugins -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+    crossorigin="anonymous"></script>
 
   <!-- Import custom stylesheets -->
   <link rel="stylesheet" href="./css/master.css">
@@ -39,23 +42,29 @@
       <a class="navbar-brand feature" href="./index.html"><i class="fas fa-compact-disc text-bluegreen"></i>
         whazam</a>
       <!-- Collapse toggler -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <!-- Favourites button -->
         <div class="navbar-nav ms-auto me-5">
-          <a class="nav-link active feature" href="./favourites.html"><i class="far fa-heart text-middlepink"></i> Your favourites</a>
+          <a class="nav-link active feature" href="./favourites.html"><i class="far fa-heart text-middlepink"></i> Your
+            favourites</a>
         </div>
         <!-- Search box for large screens -->
         <div class="input-group w-35 d-none d-lg-flex">
-          <input type="text" class="form-control form-control-sm" placeholder="Search for your favourite artist..." id="navbarSearchInput">
-          <button class="btn btn-outline-light" type="button" id="navbarSearchButton"><i class="fas fa-search text-bluegreen"></i></button>
+          <input type="text" class="form-control form-control-sm" id="navbarSearchInputDesktop"
+            placeholder="Search for your favourite artist...">
+          <button class="btn btn-outline-light" type="button" id="navbarSearchButtonDesktop"><i
+              class="fas fa-search text-bluegreen"></i></button>
         </div>
         <!-- Search box for small screens (collapsed) -->
         <div class="input-group d-lg-none">
-          <input type="text" class="form-control form-control-sm" placeholder="Search for your favourite artist..." id="navbarSearchInput">
-          <button class="btn btn-outline-light" type="button" id="navbarSearchButton"><i class="fas fa-search text-bluegreen"></i></button>
+          <input type="text" class="form-control form-control-sm" id="navbarSearchInputMobile"
+            placeholder="Search for your favourite artist...">
+          <button class="btn btn-outline-light" type="button" id="navbarSearchButtonMobile"><i
+              class="fas fa-search text-bluegreen"></i></button>
         </div>
       </div>
     </div>
@@ -69,12 +78,16 @@
         <div class="col-md-6 offset-md-6">
           <h2>Your favourite music is right here!</h2>
           <div class="input-group w-100 d-none d-lg-flex">
-              <input type="text" class="form-control form-control-lg w-35" placeholder="Search for your favourite artist..." id="songSearch">
-              <button class="btn btn-outline-light" type="button" id="navbarSearchButton"><i class="fas fa-search text-bluegreen"></i></button>
+            <input type="text" class="form-control form-control-lg w-35"
+              placeholder="Search for your favourite artist..." id="songSearch">
+            <button class="btn btn-outline-light" type="button" id="navbarSearchButton"><i
+                class="fas fa-search text-bluegreen"></i></button>
           </div>
           <div class="input-group d-lg-none">
-            <input type="text" class="form-control form-control-sm" placeholder="Search for your favourite artist..." id="indexSearchInput">
-            <button class="btn btn-outline-light" type="button" id="indexSearchButton"><i class="fas fa-search text-bluegreen"></i></button>
+            <input type="text" class="form-control form-control-sm" placeholder="Search for your favourite artist..."
+              id="indexSearchInput">
+            <button class="btn btn-outline-light" type="button" id="indexSearchButton"><i
+                class="fas fa-search text-bluegreen"></i></button>
           </div>
         </div>
       </div>
@@ -123,4 +136,5 @@
   <script src="./js/search.js"></script>
 
 </body>
+
 </html>
