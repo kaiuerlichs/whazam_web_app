@@ -29,7 +29,7 @@
 
 </head>
 
-<body id="top">
+<body>
 
   <!-- Create fixed-top navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-independence fixed-top">
@@ -46,14 +46,16 @@
         <div class="navbar-nav ms-auto me-5">
           <a class="nav-link active feature" href="./favourites.html"><i class="far fa-heart text-middlepink"></i> Your favourites</a>
         </div>
+
+            <!-- Error may present saying duplicate id for button because we have two button for different size -->
         <!-- Search box for large screens -->
         <div class="input-group w-35 d-none d-lg-flex">
-          <input type="text" class="form-control form-control-sm" placeholder="Search for your favourite artist...">
+          <input type="text" class="form-control form-control-sm" placeholder="Search for your favourite artist..." id="navbarSearchInput" value="">
           <button class="btn btn-outline-light" type="button" id="navbarSearchButton"><i class="fas fa-search text-bluegreen"></i></button>
         </div>
         <!-- Search box for small screens (collapsed) -->
         <div class="input-group d-lg-none">
-          <input type="text" class="form-control form-control-sm" placeholder="Search for your favourite artist...">
+          <input type="text" class="form-control form-control-sm" placeholder="Search for your favourite artist..." id="navbarSearchInput" value="">
           <button class="btn btn-outline-light" type="button" id="navbarSearchButton"><i class="fas fa-search text-bluegreen"></i></button>
         </div>
       </div>
@@ -137,11 +139,11 @@
       </div>
 
       <!-- Modal for Terms and Condition -->
-      <div class="modal fade" id="terms" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal fade" id="terms" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel1" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="staticBackdropLabel">Terms and Conditions</h5>
+              <h5 class="modal-title" id="staticBackdropLabel1">Terms and Conditions</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -157,11 +159,11 @@
 
 
       <!-- Modal for Copy Right -->
-      <div class="modal fade" id="copyRight" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal fade" id="copyRight" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel2" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="staticBackdropLabel">Copyright</h5>
+              <h5 class="modal-title" id="staticBackdropLabel2">Copyright</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">

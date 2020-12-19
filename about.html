@@ -29,7 +29,7 @@
 
 </head>
 
-<body id="top">
+<body>
 
   <!-- Create fixed-top navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-independence fixed-top">
@@ -46,14 +46,16 @@
         <div class="navbar-nav ms-auto me-5">
           <a class="nav-link active feature" href="./favourites.html"><i class="far fa-heart text-middlepink"></i> Your favourites</a>
         </div>
+
+        <!-- Error may present saying duplicate id for button because we have two button for different size -->
         <!-- Search box for large screens -->
         <div class="input-group w-35 d-none d-lg-flex">
-          <input type="text" class="form-control form-control-sm" placeholder="Search for your favourite artist...">
+          <input type="text" class="form-control form-control-sm" placeholder="Search for your favourite artist..." id="navbarSearchInput" value="">
           <button class="btn btn-outline-light" type="button" id="navbarSearchButton"><i class="fas fa-search text-bluegreen"></i></button>
         </div>
         <!-- Search box for small screens (collapsed) -->
         <div class="input-group d-lg-none">
-          <input type="text" class="form-control form-control-sm" placeholder="Search for your favourite artist...">
+          <input type="text" class="form-control form-control-sm" placeholder="Search for your favourite artist..."  id="navbarSearchInput" value="">
           <button class="btn btn-outline-light" type="button" id="navbarSearchButton"><i class="fas fa-search text-bluegreen"></i></button>
         </div>
       </div>
