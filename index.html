@@ -17,8 +17,11 @@
 
   <!-- Import custom stylesheets -->
   <link rel="stylesheet" href="./css/master.css">
-
   <link rel="stylesheet" href="./css/index.css">
+
+  <!-- Import external JS file-->
+  <script type="text/javascript" src="./javascript/indexScript.js"></script>
+
   <!-- Import FontAwesome kit -->
   <script src="https://kit.fontawesome.com/6c8f33a97a.js" crossorigin="anonymous"></script>
 
@@ -65,11 +68,11 @@
   <main class="container-fluid pt-5 p-0 background vh-100" id="top">
 
     <div class="container">
-      <div class="row indexMain">
+      <div class="row">
         <div class="col-md-6 offset-md-6">
           <h2>Your favourite music is right here!</h2>
           <div class="input-group w-100 d-none d-lg-flex">
-              <input type="text" class="form-control form-control-lg w-35" placeholder="Search for your favourite artist...">
+              <input type="text" class="form-control form-control-lg w-35" placeholder="Search for your favourite artist..." id="songSearch">
               <button class="btn btn-outline-light" type="button" id="navbarSearchButton"><i class="fas fa-search text-bluegreen"></i></button>
           </div>
           <div class="input-group d-lg-none">
@@ -123,5 +126,17 @@
   <!-- will be added later -->
 
 </body>
-
+<script type="text/javascript">
+  // gets the button id and adds event listener function that runs when clicked
+  document.getElementById('navbarSearchButton').addEventListener("click", function(){
+    // input box
+    var search = document.getElementById('navbarSearchInput');
+    // inputbox value
+    var toSearch = search.value;
+    // Adds the value to the url to be used in api call
+    let url = "'./artist.html?id=' +toSearch";
+    // changes the location to the url
+    window.location.assign("url")
+  })
+</script>
 </html>
