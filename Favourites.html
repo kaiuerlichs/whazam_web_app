@@ -19,7 +19,7 @@
 
   <!-- Import custom stylesheets -->
   <link rel="stylesheet" href="./css/master.css">
-  <link rel="stylesheet" href="./css/Favourites.css">
+  <link rel="stylesheet" href="./css/favourites.css">
 
   <!-- Import FontAwesome kit -->
   <script src="https://kit.fontawesome.com/6c8f33a97a.js" crossorigin="anonymous"></script>
@@ -53,14 +53,14 @@
           </div>
           <!-- Search box for large screens -->
           <div class="input-group w-35 d-none d-lg-flex">
-            <input type="text" class="form-control form-control-sm"
+            <input type="text" class="form-control form-control-sm" id="navbarSearchInput"
             placeholder="Search for your favourite artist...">
             <button class="btn btn-outline-light" type="button" id="navbarSearchButton"><i
               class="fas fa-search text-bluegreen"></i></button>
             </div>
             <!-- Search box for small screens (collapsed) -->
             <div class="input-group d-lg-none">
-              <input type="text" class="form-control form-control-sm"
+              <input type="text" class="form-control form-control-sm" id="navbarSearchInput"
               placeholder="Search for your favourite artist...">
               <button class="btn btn-outline-light" type="button" id="navbarSearchButton"><i
                 class="fas fa-search text-bluegreen"></i></button>
@@ -196,12 +196,12 @@
               <!-- Logo and app area for large screens -->
               <section class="d-none d-md-block col-md-3 text-start my-auto">
                 <a href="./index.html" class="invisble-link"><h4><i class="fas fa-compact-disc text-bluegreen"></i> whazam</h4></a>
-                <a class="btn btn-secondary btn-bluegreen" href="./app.html">Install the app</button></a>
+                <a class="btn btn-secondary btn-bluegreen" href="./app.html">Install the app</a>
               </section>
               <!-- Logo and app area for small screens -->
               <section class="d-md-none col-12 text-center">
                 <a href="./index.html" class="invisble-link"><h4><i class="fas fa-compact-disc text-bluegreen"></i> whazam</h4></a>
-                <a class="btn btn-secondary btn-bluegreen" href="./app.html">Install the app</button></a>
+                <a class="btn btn-secondary btn-bluegreen" href="./app.html">Install the app</a>
               </section>
               <!-- Link area for large screens -->
               <section class="d-none d-md-block offset-md-6 col-md-3 text-end">
