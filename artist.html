@@ -57,7 +57,7 @@
 
                 <!-- Search box for large screens -->
                 <div class="input-group w-35 d-none d-lg-flex">
-                    <input type="text" class="form-control form-control-sm"
+                    <input type="text" class="form-control form-control-sm" id="navbarSearchInput"
                         placeholder="Search for your favourite artist...">
                     <button class="btn btn-outline-light" type="button" id="navbarSearchButton">
                         <i class="fas fa-search text-bluegreen"></i>
@@ -66,7 +66,7 @@
 
                 <!-- Search box for small screens (collapsed) -->
                 <div class="input-group d-lg-none">
-                    <input type="text" class="form-control form-control-sm"
+                    <input type="text" class="form-control form-control-sm" id="navbarSearchInput"
                         placeholder="Search for your favourite artist...">
                     <button class="btn btn-outline-light" type="button" id="navbarSearchButton"><i
                             class="fas fa-search text-bluegreen"></i></button>
@@ -79,125 +79,158 @@
     <!-- Content should be placed inside this container to ensure the correct top margins and padding to avoid navbar overlap-->
     <main class="container-fluid mt-5 p-0 pt-3" id="top">
 
-        <!-- Top section containing the artists name and social links, as well as the like button -->
-        <section class="container-fluid bg-lightgrey p-0">
+        <!-- Output message if error occurs -->
+        <div v-if="errorOccured">
+            <div class="container py-5 my-5">
+                <div class="alert alert-danger" role="alert">
+                    <h4 class="alert-heading">Aww, that didn't work</h4>
+                    <p>It looks like we had a problem talking to our music specialists at TADb. We are sorry this
+                        happened, we will keep trying!</p>
+                    <hr>
+                    <p class="mb-0">Please try again later.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Output message if artist is not found -->
+        <div v-else-if="notFound">
+            <div class="container py-5 my-5">
+                <div class="alert alert-warning" role="alert">
+                    <h4 class="alert-heading">Aw, we don't know this artist yet</h4>
+                    <p>Unfortunately, our music specialists at TADb haven't discovered your favourite yet. That's a
+                        shame, because we would love to have them on our site!</p>
+                    <hr>
+                    <p class="mb-0">You can ask TADb to add the artist to their database <a
+                            href="https://www.theaudiodb.com/" class="alert-link">here</a>!</p>
+                </div>
+            </div>
+        </div>
+
+        <div v-else>
+
+            <!-- Top section containing the artists name and social links, as well as the like button -->
+            <section class="container-fluid bg-lightgrey p-0">
+                <div class="container py-5">
+                    <div class="row">
+
+                        <!-- Artist picture -->
+                        <div class="offset-1 offset-lg-0 col-3">
+                            <img :src="artist.strArtistThumb" alt="" class="img-fluid rounded-circle">
+                        </div>
+
+                        <!-- Artist name and social links -->
+                        <div class="col-7 col-lg-8 my-auto ps-4">
+                            <h1>{{artist.strArtist}}</h1>
+                            <h2>
+                                <a v-if="!isFavourite" class="clickable" v-on:click="favourite()"><i
+                                        class="far fa-heart text-middlepink"></i></a>
+                                <a v-if="isFavourite" class="clickable" v-on:click="favourite()"><i
+                                        class="fas fa-heart text-middlepink"></i></a>
+                                <a v-if="artist.strWebsite" :href="'http://'+artist.strWebsite"><i
+                                        class="fas fa-link text-bluegreen"></i></a>
+                                <a v-if="artist.strFacebook" :href="'http://'+artist.strFacebook"><i
+                                        class="fab fa-twitter-square text-bluegreen"></i></a>
+                                <a v-if="artist.strTwitter" :href="'http://'+artist.strTwitter"><i
+                                        class="fab fa-facebook-square text-bluegreen"></i></a>
+                            </h2>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- Container for bottom sections -->
             <div class="container py-5">
                 <div class="row">
 
-                    <!-- Artist picture -->
-                    <div class="offset-1 offset-lg-0 col-3">
-                        <img src="https://picsum.photos/id/237/800/800" alt="" class="img-fluid rounded-circle">
-                    </div>
+                    <!-- "About the artist" section -->
+                    <section class="col-12 col-lg-6">
+                        <h2>About the artist</h2>
 
-                    <!-- Artist name and social links -->
-                    <div class="col-7 col-lg-8 my-auto ps-4">
-                        <h1>Artist name</h1>
-                        <h2>
-                            <a href="#"><i class="far fa-heart text-middlepink"></i></a>
-                            <a href="#"><i class="fas fa-link text-bluegreen"></i></a>
-                            <a href="#"><i class="fab fa-twitter-square text-bluegreen"></i></a>
-                            <a href="#"><i class="fab fa-facebook-square text-bluegreen"></i></a>
-                        </h2>
-                    </div>
+                        <div v-if="artist.strGenre">
+                            <h4>Genre </h4>
+                            <p>{{artist.strGenre}}</p>
+                        </div>
+
+                        <div v-if="artist.strMood">
+                            <h4>Mood </h4>
+                            <p>{{artist.strMood}}</p>
+                        </div>
+
+                        <div v-if="artist.strStyle">
+                            <h4>Style </h4>
+                            <p>{{artist.strStyle}}</p>
+                        </div>
+
+                        <div v-if="artist.intFormedYear">
+                            <h4>Formed in </h4>
+                            <p>{{artist.intFormedYear}}</p>
+                        </div>
+
+                        <div v-if="artist.intBornYear">
+                            <h4>Born in </h4>
+                            <p>{{artist.intBornYear}}</p>
+                        </div>
+
+                        <div v-if="artist.intMembers">
+                            <h4>Members </h4>
+                            <p>{{artist.intMembers}}</p>
+                        </div>
+
+                        <div v-if="artist.strCountry">
+                            <h4>Hometown & country </h4>
+                            <p>{{artist.strCountry}}</p>
+                        </div>
+
+                        <div v-if="artist.strBiographyEN">
+                            <h4>Biography </h4>
+                            <p>{{artist.strBiographyEN}}</p>
+                        </div>
+
+                    </section>
+
+                    <!-- "Their albums" section -->
+                    <section class="col-12 col-lg-6">
+
+                        <!-- Message to be displayed if albums couldn't be found -->
+                        <div v-if="albumNotFound">
+                            <div class="container">
+                                <div class="alert alert-warning" role="alert">
+                                    <h4 class="alert-heading">Aw, we don't know this artist's albums yet</h4>
+                                    <p>Unfortunately, our music specialists at TADb haven't discovered your favourite
+                                        yet. That's a
+                                        shame, because we would love to have them on our site!</p>
+                                    <hr>
+                                    <p class="mb-0">You can ask TADb to add the albums to their database <a
+                                            href="https://www.theaudiodb.com/" class="alert-link">here</a>!</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- List all albums -->
+                        <div v-else>
+                            <h2>Their albums</h2>
+                            <div class="card mb-2" v-for="album in albums">
+                                <div class="row g-0">
+                                    <div class="col-3 p-3">
+                                        <img v-if="album.strAlbumThumb" :src="album.strAlbumThumb" alt="" class="img-fluid rounded">
+                                    </div>
+                                    <div class="col-9 my-auto">
+                                        <div class="card-body">
+                                            <h5 v-if="album.strAlbum" class="card-title">{{album.strAlbum}}</h5>
+                                            <p v-if="album.intYearReleased" class="card-text">{{album.intYearReleased}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a :href="'./album.html?id='+album.idAlbum" class="stretched-link"></a>
+                            </div>
+                        </div>
+
+                    </section>
 
                 </div>
             </div>
-        </section>
 
-        <!-- Container for bottom sections -->
-        <div class="container py-5">
-            <div class="row">
-
-                <!-- "About the artist" section -->
-                <section class="col-12 col-lg-6">
-                    <h2>About the artist</h2>
-                    <h4>Genre</h4>
-                    <p>R&B</p>
-                    <h4>Style: </h4>
-                    <p>Urban/R&B</p>
-                    <h4>Home: </h4>
-                    <p>Toronto, Canada</p>
-                    <h4>Biography: </h4>
-                    <p>Abel Tesfaye (born February 16, 1990), better known
-                        by his stage name The Weeknd, is a Canadian
-                        R&B recording artist and record producer from Toronto, Ontario. He began recording songs under
-                        the stage name The Weeknd and uploading them to YouTube in late 2010, though his identity was
-                        initially unknown. In March 2011, The Weeknd released a nine-song free album, House of Balloons,
-                        which was critically acclaimed. The title track is based on a sample of Siouxsie and the
-                        Banshees' hit single "Happy House." The first album is a part of a trilogy which includes
-                        Thursday released in August of the same year and Echoes of Silence issued in December. In June,
-                        House of Balloons was named as one of ten shortlisted nominees of 2011 Polaris Music Prize but
-                        eventually lost to Arcade Fire's The Suburbs. On December 21, 2011 at 11:07 p.m. EST Tesfaye
-                        released his highly anticipated third mixtape Echoes of Silence. On June 14, the tape was
-                        announced as a nominee for the 2012 Polaris Music Prize, becoming the second mixtape from the
-                        trilogy to receive recognition for the award. The Weeknd has received praise from several music
-                        publications, including those of Pitchfork, MTV, BET, Rolling Stone, XXL and The Source, who
-                        have dubbed him the "Songbird of his Generation" and the "best musical talent since Michael
-                        Jackson" (John Norris, MTV).</p>
-                </section>
-
-                <!-- "Their albums" section -->
-                <section class="col-12 col-lg-6">
-                    <h2>Their albums</h2>
-                    <div class="card mb-2">
-                        <div class="row g-0">
-                            <div class="col-3 p-3">
-                                <img src="https://picsum.photos/id/237/800/800" alt="" class="img-fluid rounded">
-                            </div>
-                            <div class="col-9 my-auto">
-                                <div class="card-body">
-                                    <h5 class="card-title">Album title</h5>
-                                    <p class="card-text">2010</p>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="#" class="stretched-link"></a>
-                    </div>
-                    <div class="card mb-2">
-                        <div class="row g-0">
-                            <div class="col-3 p-3">
-                                <img src="https://picsum.photos/id/237/800/800" alt="" class="img-fluid rounded">
-                            </div>
-                            <div class="col-9 my-auto">
-                                <div class="card-body">
-                                    <h5 class="card-title">Album title</h5>
-                                    <p class="card-text">2010</p>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="#" class="stretched-link"></a>
-                    </div>
-                    <div class="card mb-2">
-                        <div class="row g-0">
-                            <div class="col-3 p-3">
-                                <img src="https://picsum.photos/id/237/800/800" alt="" class="img-fluid rounded">
-                            </div>
-                            <div class="col-9 my-auto">
-                                <div class="card-body">
-                                    <h5 class="card-title">Album title</h5>
-                                    <p class="card-text">2010</p>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="#" class="stretched-link"></a>
-                    </div>
-                    <div class="card mb-2">
-                        <div class="row g-0">
-                            <div class="col-3 p-3">
-                                <img src="https://picsum.photos/id/237/800/800" alt="" class="img-fluid rounded">
-                            </div>
-                            <div class="col-9 my-auto">
-                                <div class="card-body">
-                                    <h5 class="card-title">Album title</h5>
-                                    <p class="card-text">2010</p>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="#" class="stretched-link"></a>
-                    </div>
-                </section>
-
-            </div>
         </div>
 
     </main>
@@ -212,7 +245,7 @@
                     <a href="./index.html" class="invisble-link">
                         <h4><i class="fas fa-compact-disc text-bluegreen"></i> whazam</h4>
                     </a>
-                    <a class="btn btn-secondary btn-bluegreen" href="./app.html">Install the app</button></a>
+                    <a class="btn btn-secondary btn-bluegreen" href="./app.html">Install the app</a>
                 </section>
 
                 <!-- Logo and app area for small screens -->
@@ -220,7 +253,7 @@
                     <a href="./index.html" class="invisble-link">
                         <h4><i class="fas fa-compact-disc text-bluegreen"></i> whazam</h4>
                     </a>
-                    <a class="btn btn-secondary btn-bluegreen" href="./app.html">Install the app</button></a>
+                    <a class="btn btn-secondary btn-bluegreen" href="./app.html">Install the app</a>
                 </section>
 
                 <!-- Link area for large screens -->
@@ -246,7 +279,7 @@
     </footer>
 
     <!-- Custom script imports -->
-    <!-- will be added later -->
+    <script src="./js/artist.js"></script>
 
 </body>
 
