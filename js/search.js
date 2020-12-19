@@ -1,7 +1,7 @@
 // gets the button id and adds event listener function that runs when clicked
-document.getElementById('navbarSearchButton').addEventListener("click", function(){
+document.getElementById('navbarSearchButtonDesktop').addEventListener("click", function(){
   // input box
-  var search = document.getElementById('navbarSearchInput');
+  var search = document.getElementById('navbarSearchInputDesktop');
   // inputbox value
   var toSearch = search.value;
   if(toSearch !== ""){
@@ -13,9 +13,9 @@ document.getElementById('navbarSearchButton').addEventListener("click", function
 })
 
 // gets the button id and adds event listener function that runs when clicked
-document.getElementById('indexSearchButton').addEventListener("click", function(){
+document.getElementById('indexSearchButtonMobile').addEventListener("click", function(){
   // input box
-  var search = document.getElementById('indexSearchInput');
+  var search = document.getElementById('indexSearchInputMobile');
   // inputbox value
   var toSearch = search.value;
   if(toSearch !== ""){
