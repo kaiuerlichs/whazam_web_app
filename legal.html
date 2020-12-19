@@ -12,8 +12,11 @@
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
   <!-- Import Bootstrap CSS and JS plugins -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+    crossorigin="anonymous"></script>
 
   <!-- Import custom stylesheets -->
   <link rel="stylesheet" href="./css/legal.css">
@@ -38,25 +41,31 @@
       <a class="navbar-brand feature" href="./index.html"><i class="fas fa-compact-disc text-bluegreen"></i>
         whazam</a>
       <!-- Collapse toggler -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <!-- Favourites button -->
         <div class="navbar-nav ms-auto me-5">
-          <a class="nav-link active feature" href="./favourites.html"><i class="far fa-heart text-middlepink"></i> Your favourites</a>
+          <a class="nav-link active feature" href="./favourites.html"><i class="far fa-heart text-middlepink"></i> Your
+            favourites</a>
         </div>
 
-            <!-- Error may present saying duplicate id for button because we have two button for different size -->
+        <!-- Error may present saying duplicate id for button because we have two button for different size -->
         <!-- Search box for large screens -->
         <div class="input-group w-35 d-none d-lg-flex">
-          <input type="text" class="form-control form-control-sm" placeholder="Search for your favourite artist..." id="navbarSearchInput" value="">
-          <button class="btn btn-outline-light" type="button" id="navbarSearchButton"><i class="fas fa-search text-bluegreen"></i></button>
+          <input type="text" class="form-control form-control-sm" id="navbarSearchInputDesktop"
+            placeholder="Search for your favourite artist...">
+          <button class="btn btn-outline-light" type="button" id="navbarSearchButtonDesktop"><i
+              class="fas fa-search text-bluegreen"></i></button>
         </div>
         <!-- Search box for small screens (collapsed) -->
         <div class="input-group d-lg-none">
-          <input type="text" class="form-control form-control-sm" placeholder="Search for your favourite artist..." id="navbarSearchInput" value="">
-          <button class="btn btn-outline-light" type="button" id="navbarSearchButton"><i class="fas fa-search text-bluegreen"></i></button>
+          <input type="text" class="form-control form-control-sm" id="navbarSearchInputMobile"
+            placeholder="Search for your favourite artist...">
+          <button class="btn btn-outline-light" type="button" id="navbarSearchButtonMobile"><i
+              class="fas fa-search text-bluegreen"></i></button>
         </div>
       </div>
     </div>
@@ -68,7 +77,8 @@
     <div class="jumbotron jumbotron-fluid startImage">
       <div class="container text-center mt-1">
         <h1 class="display-4 py-5 text-light">Legal</h1>
-        <p class="lead py-5 text-light">whazam &#169; Andrew Hay, Biraj Adhikari, Christopher O’May, Kai Uerlichs, Lewis McLean, Nicole Jackson</p>
+        <p class="lead py-5 text-light">whazam &#169; Andrew Hay, Biraj Adhikari, Christopher O’May, Kai Uerlichs, Lewis
+          McLean, Nicole Jackson</p>
       </div>
     </div>
 
@@ -76,7 +86,8 @@
     <hr class="featurette-divider">
 
     <div class="container py-3">
-      <p class="py-3">The website makes sure to follow all the laws set in place for the distribution of websites set by the Government and no personal data of the user is being used by any third party software or company.</p>
+      <p class="py-3">The website makes sure to follow all the laws set in place for the distribution of websites set by
+        the Government and no personal data of the user is being used by any third party software or company.</p>
       <div class="row row-cols-1 row-cols-md-3">
         <div class="col mb-4">
           <div class="card h-100">
@@ -120,7 +131,8 @@
       </div>
 
       <!-- Modal for Privacy and Policy -->
-      <div class="modal fade" id="privacy" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal fade" id="privacy" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -128,7 +140,8 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <p>Since the website doesn't require the user to enter any personal information about them, we don't register any data about the user. </p>
+              <p>Since the website doesn't require the user to enter any personal information about them, we don't
+                register any data about the user. </p>
               <p> The website is not linked to any third party software or company that requires user data.</p>
             </div>
             <div class="modal-footer">
@@ -139,7 +152,8 @@
       </div>
 
       <!-- Modal for Terms and Condition -->
-      <div class="modal fade" id="terms" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel1" aria-hidden="true">
+      <div class="modal fade" id="terms" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel1" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -148,7 +162,8 @@
             </div>
             <div class="modal-body">
               <p>The web page can be used from any browser and device with limited restrictions.</p>
-              <p>The page should not be used for anything other than searching for music and lyrics. And most importantly, please make sure to have fun while using the page.</p>
+              <p>The page should not be used for anything other than searching for music and lyrics. And most
+                importantly, please make sure to have fun while using the page.</p>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -159,7 +174,8 @@
 
 
       <!-- Modal for Copy Right -->
-      <div class="modal fade" id="copyRight" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel2" aria-hidden="true">
+      <div class="modal fade" id="copyRight" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel2" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -167,7 +183,8 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <p>We have made sure to adhere by chapter 3 of The Copyright, Designs and Patents Act 1988. Which states that we are allowed to use if we are: </p>
+              <p>We have made sure to adhere by chapter 3 of The Copyright, Designs and Patents Act 1988. Which states
+                that we are allowed to use if we are: </p>
               <p>28A.Making of temporary copies
                 <br>
                 28B.Personal copies for private use
@@ -183,7 +200,8 @@
                 31. Incidental inclusion of copyright material.
               </p>
               <p>We fall under 29A</p>
-              <a href="https://www.legislation.gov.uk/ukpga/1988/48/contents">The Copyright, Designs and Patents Act 1988</a>
+              <a href="https://www.legislation.gov.uk/ukpga/1988/48/contents">The Copyright, Designs and Patents Act
+                1988</a>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
