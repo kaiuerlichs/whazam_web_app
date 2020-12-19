@@ -6,7 +6,7 @@ document.getElementById('navbarSearchButton').addEventListener("click", function
   var toSearch = search.value;
   if(toSearch !== ""){
     // Adds the value to the url to be used in api call
-    let url = "/artist.html?s=" + toSearch;
+    let url = "artist.html?s=" + toSearch;
     // changes the location to the url
     window.location.assign(url)
   }
@@ -20,7 +20,7 @@ document.getElementById('indexSearchButton').addEventListener("click", function(
   var toSearch = search.value;
   if(toSearch !== ""){
     // Adds the value to the url to be used in api call
-    let url = "/artist.html?s=" + toSearch;
+    let url = "artist.html?s=" + toSearch;
     // changes the location to the url
     window.location.assign(url)
   }
