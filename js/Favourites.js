@@ -5,12 +5,19 @@ let artistId = "https://theaudiodb.com/api/v1/json/1/artist.php?i=";
 
 //Creates a card and appends it to the specified div.
 function appendCard(thumb,name,id,link) {
+  if (thumb != null) {
   document.getElementById(id).innerHTML+=('<div class="col-6 col-md-3">'
   +'<div class="card mb-3">'
   +'<img class="img-fluid" src="'+thumb+'" alt="Lorem Image">'
   +'<div class="card-img-overlay"><h4 class="card-title">'+name
   +'</h4></div><a href="'+link+'" class="stretched-link"></a></div></div>'
-  );
+  );}
+  else {
+  document.getElementById(id).innerHTML+=('<div class="col-6 col-md-3">'
+  +'<a href="'+link+'"><h4 class="card-title">'+name
+  +'</h4></a></div>'
+  )
+  }
 }
 //Appends a message to the specified div if the user's list is empty.
 function appendMessage(id) {
