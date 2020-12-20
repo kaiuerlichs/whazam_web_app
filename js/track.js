@@ -39,6 +39,7 @@ let app = new Vue({
 
     methods: {
 
+        // Get album of track for cover image
         getAlbum: function () {
             axios.get('https://theaudiodb.com/api/v1/json/1/album.php?m=' + app.track.idAlbum)
                 .then(function (response) {
@@ -46,6 +47,7 @@ let app = new Vue({
                 })
         },
 
+        // Get lyrics and save locally
         getLyrics: function () {
             let cachedLyrics = localStorage.getItem("cachedLyrics");
             if (cachedLyrics === null) {
