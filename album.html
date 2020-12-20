@@ -2,50 +2,6 @@
 <html lang="en" dir="ltr">
 
 <head>
-    <!-- CSS for the table elements and headings -->
-    <style>
-        th {
-            text-align: justify;
-        }
-
-        table {
-            border: 5px solid;
-            float: left;
-            table-layout: fixed;
-            height: 400px;
-            width: 40%;
-            display: inline-block;
-            text-align: justify;
-            margin-bottom: 50px;
-        }
-
-        table.left {
-            float: left;
-            margin-left: 80px;
-        }
-
-        table.right {
-            float: right;
-            margin-right: 80px;
-        }
-
-        .albuminfo .tracklist {
-            display: inline;
-            padding: 20px;
-        }
-
-        .albuminfo {
-            float: left;
-            width: 40%;
-            margin-left: 80px;
-        }
-
-        .tracklist {
-            float: right;
-            width: 40%;
-            margin-right: 80px;
-        }
-    </style>
 
     <!-- Meta tags -->
     <meta charset="utf-8">
@@ -142,61 +98,60 @@
         <div class="container py-5">
             <div class="row">
 
-                <!-- Heading that appear above the two tables -->
-                <section class="col-12 col-lg-12  ">
-                    <div class="albuminfo">
-                        <h2>Album information</h2>
-                    </div>
-                    <div class="tracklist">
-                        <h2>Track List</h2>
-                    </div>
+                <!-- "About the album" section -->
+                <section class="col-12 col-lg-6">
+                    <h2>About the album</h2>
+                    <h4>Element</h4>
+                    <p>Value</p>
+                    <h4>Element</h4>
+                    <p>Value</p>
+                    <h4>Element</h4>
+                    <p>Value</p>
+                    <h4>Element</h4>
+                    <p>Value</p>
                 </section>
-                <!-- Table that will appear on the left hand side of the screen -->
-                <section class="col-12 col-lg-6 ">
 
-                    <h5>
-                        <table class="left">
+                <!-- "Track list" section -->
+                <section class="col-12 col-lg-6">
+                    <h2>Track list</h2>
 
-                            <tr>
+                    <div class="card mb-2">
+                        <div class="card-body">
+                            <h5 class="card-title">1. Track title</h5>
+                        </div>
+                        <a href="#" class="stretched-link"></a>
+                    </div>
 
-                                <th>Genres:</th>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <th>Styles:</th>
-                                <td>2</td>
-                            </tr>
-                            <tr>
-                                <th>Label:</th>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <th>Release date:</th>
+                    <div class="card mb-2">
+                        <div class="card-body">
+                            <h5 class="card-title">2. Track title</h5>
+                        </div>
+                        <a href="#" class="stretched-link"></a>
+                    </div>
 
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <th>Description:</th>
-                                <td></td>
-                            </tr>
-                            <!-- Table that will appear on the left hand side of the screen -->
-                            <table class="right">
+                    <div class="card mb-2">
+                        <div class="card-body">
+                            <h5 class="card-title">3. Track title</h5>
+                        </div>
+                        <a href="#" class="stretched-link"></a>
+                    </div>
 
-                                <tr>
+                    <div class="card mb-2">
+                        <div class="card-body">
+                            <h5 class="card-title">4. Track title</h5>
+                        </div>
+                        <a href="#" class="stretched-link"></a>
+                    </div>
 
-                                    <th>Track number:</th>
-                                    <td>1</td>
-                                </tr>
-                                <tr>
-                                    <th>Title:</th>
-                                    <td>2</td>
-                                </tr>
-                                <tr>
-                                    <th>Label:</th>
-                                    <td></td>
-                                </tr>
-                    </h5>
+                    <div class="card mb-2">
+                        <div class="card-body">
+                            <h5 class="card-title">5. Track title</h5>
+                        </div>
+                        <a href="#" class="stretched-link"></a>
+                    </div>
+                    
                 </section>
+
             </div>
         </div>
 
