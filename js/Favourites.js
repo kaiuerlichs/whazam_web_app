@@ -5,7 +5,7 @@ let artistId = "https://theaudiodb.com/api/v1/json/1/artist.php?i=";
 
 //Creates a card and appends it to the specified div.
 function appendCard(thumb,name,id) {
-  document.getElementById(id).innerHTML+=('<div class="col-3">'
+  document.getElementById(id).innerHTML+=('<div class="col-6 col-md-3">'
   +'<div class="card mb-3">'
   +'<img class="img-fluid" src="'+thumb+'" alt="Lorem Image">'
   +'<div class="card-img-overlay"><h4 class="card-title">'+name+'</h4></div></div></div>'
