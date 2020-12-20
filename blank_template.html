@@ -53,16 +53,16 @@
                 </div>
                 <!-- Search box for large screens -->
                 <div class="input-group w-35 d-none d-lg-flex">
-                    <input type="text" class="form-control form-control-sm"
+                    <input type="text" class="form-control form-control-sm" id="navbarSearchInputDesktop"
                         placeholder="Search for your favourite artist...">
-                    <button class="btn btn-outline-light" type="button" id="navbarSearchButton"><i
+                    <button class="btn btn-outline-light" type="button" id="navbarSearchButtonDesktop"><i
                             class="fas fa-search text-bluegreen"></i></button>
                 </div>
                 <!-- Search box for small screens (collapsed) -->
                 <div class="input-group d-lg-none">
-                    <input type="text" class="form-control form-control-sm"
+                    <input type="text" class="form-control form-control-sm" id="navbarSearchInputMobile"
                         placeholder="Search for your favourite artist...">
-                    <button class="btn btn-outline-light" type="button" id="navbarSearchButton"><i
+                    <button class="btn btn-outline-light" type="button" id="navbarSearchButtonMobile"><i
                             class="fas fa-search text-bluegreen"></i></button>
                 </div>
             </div>
@@ -70,7 +70,7 @@
     </nav>
 
     <!-- Content should be placed inside this container to ensure the correct top margins and padding to avoid navbar overlap-->
-    <main class="container-fluid mt-5 pt-3" id="top">
+    <main class="container-fluid mt-5 p-0 pt-3" id="top">
         <!-- 
 
             Create your page content here (you can create a normal container within this fluid container if needed). 
@@ -90,12 +90,12 @@
                 <!-- Logo and app area for large screens -->
                 <section class="d-none d-md-block col-md-3 text-start my-auto">
                     <a href="./index.html" class="invisble-link"><h4><i class="fas fa-compact-disc text-bluegreen"></i> whazam</h4></a>
-                    <a class="btn btn-secondary btn-bluegreen" href="./app.html">Install the app</button></a>
+                    <a class="btn btn-secondary btn-bluegreen" href="./app.html">Install the app</a>
                 </section>
                 <!-- Logo and app area for small screens -->
                 <section class="d-md-none col-12 text-center">
                     <a href="./index.html" class="invisble-link"><h4><i class="fas fa-compact-disc text-bluegreen"></i> whazam</h4></a>
-                    <a class="btn btn-secondary btn-bluegreen" href="./app.html">Install the app</button></a>
+                    <a class="btn btn-secondary btn-bluegreen" href="./app.html">Install the app</a>
                 </section>
                 <!-- Link area for large screens -->
                 <section class="d-none d-md-block offset-md-6 col-md-3 text-end">
@@ -118,7 +118,7 @@
     </footer>
 
     <!-- Custom script imports -->
-    <!-- will be added later -->
+    <script src="./js/search.js"></script>
 
 </body>
 

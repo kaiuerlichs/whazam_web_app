@@ -19,8 +19,7 @@
     crossorigin="anonymous"></script>
 
   <!-- Import custom stylesheets -->
-  <link rel="stylesheet" href="./css/master.css">
-  <link rel="stylesheet" href="./css/index.css">
+  <link rel="stylesheet" href="./css/aboutus.css">
 
   <!-- Import FontAwesome kit -->
   <script src="https://kit.fontawesome.com/6c8f33a97a.js" crossorigin="anonymous"></script>
@@ -29,7 +28,7 @@
   <!-- will be added later -->
 
   <!-- Set title of page -->
-  <title>Index ● whazam</title><!-- Make sure to edit this! -->
+  <title>About Us</title>
 
 </head>
 
@@ -52,6 +51,8 @@
           <a class="nav-link active feature" href="./favourites.html"><i class="far fa-heart text-middlepink"></i> Your
             favourites</a>
         </div>
+
+        <!-- Error may present saying duplicate id for button because we have two button for different size -->
         <!-- Search box for large screens -->
         <div class="input-group w-35 d-none d-lg-flex">
           <input type="text" class="form-control form-control-sm" id="navbarSearchInputDesktop"
@@ -70,21 +71,57 @@
     </div>
   </nav>
 
-  <!-- Content should be placed inside this container to ensure the correct top margins and padding to avoid navbar overlap-->
-  <main class="container-fluid pt-5 p-0 background vh-100" id="top">
-
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6 offset-md-6">
-          <h2>Your favourite music is right here!</h2>
-          <div class="input-group">
-            <input type="text" class="form-control form-control-lg w-35"
-              placeholder="Search for your favourite artist..." id="indexSearchButton">
-            <button class="btn btn-outline-light" type="button" id="indexSearchButton"><i
-                class="fas fa-search text-bluegreen"></i></button>
-          </div>
+  <!-- Main section -->
+  <main class="container-fluid mt-5 p-0 pt-3" id="top">
+    <!-- Laed section of the page -->
+    <section class="py-5 text-center container">
+      <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+          <h1 class="fw-light">About</h1>
+          <p class="lead text-muted pt-3">We provide you with albums, song and lyrics to the artist of your choice. A
+            completely original idea never done before *cough* *cough*</p>
         </div>
       </div>
+    </section>
+
+    <!-- Container for the description of the web page and the team. -->
+    <div class="container">
+      <!-- featurette divider to make the page look organized and to divide the content -->
+      <hr class="featurette-divider">
+      <div class="row featurette">
+        <div class="col-md-7">
+          <!-- about the team -->
+          <h2 class="featurette-heading aboutHeading">About the team.</h2>
+          <p class="lead">We are a bunch of Web Development students from the University of Dundee and we programmed
+            this brilliant masterpiece of web-app. Thankfully, our lecturer Mike taught us very well and got us through
+            this “unique” first
+            semester at uni.</p>
+        </div>
+        <div class="col-md-5 ps-3 aboutImage">
+          <img src="https://upload.wikimedia.org/wikipedia/en/c/cb/University_of_Dundee_shield.png" alt="Logo">
+        </div>
+      </div>
+
+      <!-- featurette divider to make the page look organized and to divide the content -->
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-8 order-md-2">
+          <h2 class="featurette-heading aboutHeading2">About the website.</h2>
+          <p class="lead">This web app is built using HTML, CSS and JavaScript, allowing us to create a unique and
+            detailed user experience by making use of the Bootstrap CSS framework and the vue.js library. By taking data
+            from the “TheAudioDB” and “lyrics.ovh” APIs, we show our users exactly what they want to know about their
+            favourite artists and music.</p>
+        </div>
+        <div class="col-md-4 col-lg-3 order-md-1 aboutImage">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShHS_3r0f47aiJAjmfrLSKwmDKXX-XczX8Bw&usqp=CAU"
+            alt="Logo">
+        </div>
+      </div>
+
+      <!-- featurette divider to make the page look organized and to divide the content -->
+      <hr class="featurette-divider">
+
     </div>
   </main>
 
@@ -97,14 +134,14 @@
           <a href="./index.html" class="invisble-link">
             <h4><i class="fas fa-compact-disc text-bluegreen"></i> whazam</h4>
           </a>
-          <a class="btn btn-secondary btn-bluegreen" href="./app.html">Install the app</a>
+          <a class="btn btn-secondary btn-bluegreen" href="./app.html">Install the app.</a>
         </section>
         <!-- Logo and app area for small screens -->
         <section class="d-md-none col-12 text-center">
           <a href="./index.html" class="invisble-link">
             <h4><i class="fas fa-compact-disc text-bluegreen"></i> whazam</h4>
           </a>
-          <a class="btn btn-secondary btn-bluegreen" href="./app.html">Install the app</a>
+          <a class="btn btn-secondary btn-bluegreen" href="./app.html">Install the app.</a>
         </section>
         <!-- Link area for large screens -->
         <section class="d-none d-md-block offset-md-6 col-md-3 text-end">
@@ -126,10 +163,7 @@
     </div>
   </footer>
 
-  <!-- Custom script imports -->
-  <script src="./js/search.js"></script>
-  <script src="./js/search_index.js"></script>
-
+  <script src="./js/search.js" charset="utf-8"></script>
 
 </body>
 

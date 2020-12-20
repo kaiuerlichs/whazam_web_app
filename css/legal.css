@@ -1,3 +1,10 @@
+
+
+
+
+
+
+
 /* Import fonts */
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 
@@ -74,9 +81,17 @@ a.footer-link:hover, a.footer-link:active{
 a.invisble-link{
     color: white;
     text-decoration: none;
-}
+  }
 
-/* Make things look clickable */
-.clickable{
-    cursor: pointer;
-}
+
+  .featurette-divider{
+      margin-top: 60px;
+      margin-bottom: 30px;
+  }
+
+  .startImage{
+      background-image: url('https://media.istockphoto.com/photos/judge-gavel-and-scale-in-court-legal-concept-picture-id1090431444?k=6&m=1090431444&s=612x612&w=0&h=UXieliwT_Kle42yilMT1Zpgc5hdoPEYZuscd3hYT63c=');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+  }

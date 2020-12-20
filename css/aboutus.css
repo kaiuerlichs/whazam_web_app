@@ -68,15 +68,35 @@ a.footer-link:link, a.footer-link:visited{
     color: white;
     text-decoration: none;
 }
+
 a.footer-link:hover, a.footer-link:active{
     text-decoration: underline;
 }
+
 a.invisble-link{
     color: white;
     text-decoration: none;
 }
 
-/* Make things look clickable */
-.clickable{
-    cursor: pointer;
+/* custom css for divider to make the page look more clean */
+.featurette-divider{
+    margin-top: 60px;
+    margin-bottom: 60px;
 }
+
+/* break point for responsive page */
+@media (min-width: 992px) {
+   .aboutHeading{
+       margin-top: 90px;
+   }
+   .aboutHeading2{
+    margin-top: 60px;
+    padding: 0%;
+  }
+ }
+
+ @media (max-width: 430px) {
+     .aboutImage{
+        display: none;
+     }
+ }

@@ -1,0 +1,23 @@
+/*colours the album/artist h2 grey*/
+h2.album-artist{
+  color: grey;
+}
+/*sets bg colour and size of grey boxes*/
+/*there wasn't a middle grey shade for these boxes like in wireframes so i added one*/
+.box{
+  height: auto;
+
+}
+/*sets the heart icon pink*/
+i{
+  color: #E07BB9;
+}
+
+/*sets the size of the img*/
+img.album-pic{
+  height: auto;
+  float:left;
+  display: flex;
+  padding: 10px;
+
+}
