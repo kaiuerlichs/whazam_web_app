@@ -52,17 +52,19 @@
             class="far fa-heart text-middlepink"></i> Your favourites</a>
           </div>
           <!-- Search box for large screens -->
+
+          <!-- Search box for large screens -->
           <div class="input-group w-35 d-none d-lg-flex">
-            <input type="text" class="form-control form-control-sm"
+            <input type="text" class="form-control form-control-sm" id="navbarSearchInputDesktop"
             placeholder="Search for your favourite artist...">
-            <button class="btn btn-outline-light" type="button" id="navbarSearchButton"><i
+            <button class="btn btn-outline-light" type="button" id="navbarSearchButtonDesktop"><i
               class="fas fa-search text-bluegreen"></i></button>
             </div>
             <!-- Search box for small screens (collapsed) -->
             <div class="input-group d-lg-none">
-              <input type="text" class="form-control form-control-sm"
+              <input type="text" class="form-control form-control-sm" id="navbarSearchInputMobile"
               placeholder="Search for your favourite artist...">
-              <button class="btn btn-outline-light" type="button" id="navbarSearchButton"><i
+              <button class="btn btn-outline-light" type="button" id="navbarSearchButtonMobile"><i
                 class="fas fa-search text-bluegreen"></i></button>
               </div>
             </div>
@@ -78,113 +80,17 @@
             <div class="row mt-2">
               <h4>Your Favourite Artists</h4>
             </div>
-            <div class="row p-1">
-              <div class="col-3">
-                <div class="card mb-3">
-                  <img class="img-fluid" src="https://picsum.photos/300" alt="Lorem Image">
-                  <div class="card-img-overlay">
-                    <h4 class="card-title">artist name</h4>
-                  </div>
-                </div>
-              </div>
-              <div class="col-3">
-                <div class="card mb-3">
-                  <img class="img-fluid" src="https://picsum.photos/300" alt="Lorem Image">
-                  <div class="card-img-overlay">
-                    <h4 class="card-title">artist name</h4>
-                  </div>
-                </div>
-              </div>
-              <div class="col-3">
-                <div class="card mb-3">
-                  <img class="img-fluid" src="https://picsum.photos/300" alt="Lorem Image">
-                  <div class="card-img-overlay">
-                    <h4 class="card-title">artist name</h4>
-                  </div>
-                </div>
-              </div>
-              <div class="col-3">
-                <div class="card mb-3">
-                  <img class="img-fluid" src="https://picsum.photos/300" alt="Lorem Image">
-                  <div class="card-img-overlay">
-                    <h4 class="card-title">artist name</h4>
-                  </div>
-                </div>
-              </div>
+            <div class="row p-1" id="artists">
             </div>
             <div class="row">
               <h4>Your Favourite Albums</h4>
             </div>
-            <div class="row p-1">
-              <div class="col-3">
-                <div class="card mb-3">
-                  <img class="img-fluid" src="https://picsum.photos/300" alt="Lorem Image">
-                  <div class="card-img-overlay">
-                    <h4 class="card-title">Album Name</h4>
-                  </div>
-                </div>
-              </div>
-              <div class="col-3">
-                <div class="card mb-3">
-                  <img class="img-fluid" src="https://picsum.photos/300" alt="Lorem Image">
-                  <div class="card-img-overlay">
-                    <h4 class="card-title">Album Name</h4>
-                  </div>
-                </div>
-              </div>
-              <div class="col-3">
-                <div class="card mb-3">
-                  <img class="img-fluid" src="https://picsum.photos/300" alt="Lorem Image">
-                  <div class="card-img-overlay">
-                    <h4 class="card-title">Album Name</h4>
-                  </div>
-                </div>
-              </div>
-              <div class="col-3">
-                <div class="card mb-3">
-                  <img class="img-fluid" src="https://picsum.photos/300" alt="Lorem Image">
-                  <div class="card-img-overlay">
-                    <h4 class="card-title">Album Name</h4>
-                  </div>
-                </div>
-              </div>
+            <div class="row p-1" id="albums">
             </div>
             <div class="row">
               <h4>Your Favourite Tracks</h4>
             </div>
-            <div class="row p-1 mb-4">
-              <div class="col-3">
-                <div class="card mb-3">
-                  <img class="img-fluid" src="https://picsum.photos/300" alt="Lorem Image">
-                  <div class="card-img-overlay">
-                    <h4 class="card-title">Track Name</h4>
-                  </div>
-                </div>
-              </div>
-              <div class="col-3">
-                <div class="card mb-3">
-                  <img class="img-fluid" src="https://picsum.photos/300" alt="Lorem Image">
-                  <div class="card-img-overlay">
-                    <h4 class="card-title">Track Name</h4>
-                  </div>
-                </div>
-              </div>
-              <div class="col-3">
-                <div class="card mb-3">
-                  <img class="img-fluid" src="https://picsum.photos/300" alt="Lorem Image">
-                  <div class="card-img-overlay">
-                    <h4 class="card-title">Track Name</h4>
-                  </div>
-                </div>
-              </div>
-              <div class="col-3">
-                <div class="card mb-3">
-                  <img class="img-fluid" src="https://picsum.photos/300" alt="Lorem Image">
-                  <div class="card-img-overlay">
-                    <h4 class="card-title">Track Name</h4>
-                  </div>
-                </div>
-              </div>
+            <div class="row p-1 mb-4" id="tracks">
             </div>
           </div>
         </main>
@@ -224,7 +130,8 @@
         </footer>
 
         <!-- Custom script imports -->
-        <!-- will be added later -->
+        <script src="./js/Favourites.js"></script>
+        <script src="./js/search.js"></script>
 
       </body>
 
