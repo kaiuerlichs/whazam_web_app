@@ -1,5 +1,5 @@
 // URI pointers without IDs
-let trackId = "theaudiodb.com/api/v1/json/1/track.php?h=";
+let trackId = "https://theaudiodb.com/api/v1/json/1/track.php?h=";
 let albumId = "https://theaudiodb.com/api/v1/json/1/album.php?m=";
 let artistId = "https://theaudiodb.com/api/v1/json/1/artist.php?i=";
 
@@ -68,9 +68,15 @@ for (i=0;i<favouriteTracks.length;i++) {
   axios.get(trackId+favouriteTracks[i])
   .then(function(response) {
     let track = response.data.track[0];
-    let thumb = track.strTrackThumb;
-    let name=track.strTrack;
-    let id=track.idTrack;
-    appendCard(thumb,name,"track",("./track.html?id="+id));
+
+    axios.get("https://theaudiodb.com/api/v1/json/1/album.php?m="+track.idAlbum)
+    .then(function(response){
+
+      let thumb = response.data.album[0].strAlbumThumb;
+      let name=track.strTrack;
+      let id=track.idTrack;
+      appendCard(thumb,name,"track",("./track.html?id="+id));
+
+    })
   })
 }}
