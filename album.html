@@ -25,7 +25,20 @@
     <script src="https://kit.fontawesome.com/6c8f33a97a.js" crossorigin="anonymous"></script>
 
     <!-- PWA related imports go here -->
-    <!-- will be added later -->
+    <link rel="manifest" href="./manifest.json">
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function () {
+                navigator.serviceWorker.register('./sw.js').then(function (registration) {
+                    // Registration was successful
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                }, function (err) {
+                    // registration failed :(
+                    console.log('ServiceWorker registration failed: ', err);
+                });
+            });
+        }
+    </script>
 
     <!-- Set title of page -->
     <title>[name of album] ● whazam</title><!-- Make sure to edit this! -->
