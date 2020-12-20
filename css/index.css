@@ -1,0 +1,7 @@
+.background { background: linear-gradient(to right, rgba(255,0,255,0.25), rgba(0,0,0,0.5), rgba(0,0,0,1)), url('../assets/index/indexBackground.jpg') center / cover no-repeat!important; }
+
+h2{
+  padding-top: 50px;
+  font-size: 50px;
+  color: #ffffff;
+}
