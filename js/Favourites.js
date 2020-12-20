@@ -3,10 +3,7 @@ let trackId = "theaudiodb.com/api/v1/json/1/track.php?h=32793500";
 let albumId = "https://theaudiodb.com/api/v1/json/1/album.php?m=";
 let artistId = "https://theaudiodb.com/api/v1/json/1/artist.php?i=";
 
-function createNode(element) {
-  return document.createElement(element);
-}
-
+//Creates a card and appends it to the specified div.
 function appendCard(thumb,name,id) {
   document.getElementById(id).innerHTML+=('<div class="col-3">'
   +'<div class="card mb-3">'
@@ -15,11 +12,10 @@ function appendCard(thumb,name,id) {
   );
 }
 
-let app = this;
-let ul = document.getElementById('artists');
-
+//Retrieve favourite artists list from local storage.
 let favouriteArtists = localStorage.getItem("favouriteArtists");
 favouriteArtists = JSON.parse(favouriteArtists);
+//Creates a card for every artist in the favourites list.
 for (i=0;i<favouriteArtists.length;i++) {
   axios.get(artistId+favouriteArtists[i])
   .then(function(response) {
@@ -29,7 +25,7 @@ for (i=0;i<favouriteArtists.length;i++) {
     appendCard(thumb,name,"artists");
   })
 }
-
+//Repeats the previous process for the album and track lists.
 let favouriteAlbums = localStorage.getItem("favouriteAlbums");
 favouriteAlbums = JSON.parse(favouriteAlbums);
 for (i=0;i<favouriteAlbums.length;i++) {
@@ -41,7 +37,6 @@ for (i=0;i<favouriteAlbums.length;i++) {
     appendCard(thumb,name,"albums");
   })
 }
-
 let favouriteTracks = localStorage.getItem("favouriteTracks");
 favouriteTracks = JSON.parse(favouriteTracks);
 for (i=0;i<favouriteTracks.length;i++) {
