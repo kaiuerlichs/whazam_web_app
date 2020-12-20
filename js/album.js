@@ -30,13 +30,13 @@ let app = new Vue({
         axios.get(apiBase + query)
             .then(function (response) {
                 
-                // If artist is not found
+                // If album is not found
                 if (response.data.album === null) {
                     app.notFound = true;
                     window.document.title = "Sorry :( ● whazam"
                 }
 
-                // If artist is found
+                // If album is found
                 else {
                     app.album = response.data.album[0];
                     window.document.title = app.album.strAlbum + " ● whazam";
@@ -82,7 +82,7 @@ let app = new Vue({
         // Toggle favourite stage
         favourite: function(){
             
-            // If artist isnt favourite
+            // If album isnt favourite
             if(!app.isFavourite){
 
                 // Get localStorage object
@@ -95,7 +95,7 @@ let app = new Vue({
                     localStorage.setItem("favouriteAlbums", JSON.stringify(data));
                 }
 
-                // Add artist ID to local storage
+                // Add album ID to local storage
                 else{
                     favouriteAlbums = JSON.parse(favouriteAlbums);
                     let data = favouriteAlbums;
@@ -113,7 +113,7 @@ let app = new Vue({
                 }
             }
 
-            // If artist is favourite
+            // If album is favourite
             else{
                 // Retrieve localStorage
                 let favouriteAlbums = localStorage.getItem("favouriteAlbums");
@@ -137,7 +137,7 @@ let app = new Vue({
             app.checkFavourite();
         },
 
-        // Check if artist is favourite
+        // Check if album is favourite
         checkFavourite: function(){
             let favouriteAlbums = localStorage.getItem("favouriteAlbums");
 
@@ -148,7 +148,7 @@ let app = new Vue({
                 let data = favouriteAlbums;
                 let found = false;
 
-                // Search for artist
+                // Search for album
                 for(i=0; i<data.length; i++){
                     if(data[i] === app.album.idAlbum){
                         found = true;
