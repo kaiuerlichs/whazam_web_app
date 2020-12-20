@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+
+  <!-- Meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Import Vue.js and Axios from CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.2/vue.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+  <!-- Import Bootstrap CSS and JS plugins -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+    crossorigin="anonymous"></script>
+
+  <!-- Import custom stylesheets -->
+  <link rel="stylesheet" href="./css/legal.css">
+
+  <!-- Import FontAwesome kit -->
+  <script src="https://kit.fontawesome.com/6c8f33a97a.js" crossorigin="anonymous"></script>
+
+  <!-- PWA related imports go here -->
+  <!-- will be added later -->
+
+  <!-- Set title of page -->
+  <title>Legal</title>
+
+</head>
+
+<body>
+
+  <!-- Create fixed-top navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-independence fixed-top">
+    <div class="container">
+      <!-- Navbar title -->
+      <a class="navbar-brand feature" href="./index.html"><i class="fas fa-compact-disc text-bluegreen"></i>
+        whazam</a>
+      <!-- Collapse toggler -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <!-- Favourites button -->
+        <div class="navbar-nav ms-auto me-5">
+          <a class="nav-link active feature" href="./favourites.html"><i class="far fa-heart text-middlepink"></i> Your
+            favourites</a>
+        </div>
+
+        <!-- Error may present saying duplicate id for button because we have two button for different size -->
+        <!-- Search box for large screens -->
+        <div class="input-group w-35 d-none d-lg-flex">
+          <input type="text" class="form-control form-control-sm" id="navbarSearchInputDesktop"
+            placeholder="Search for your favourite artist...">
+          <button class="btn btn-outline-light" type="button" id="navbarSearchButtonDesktop"><i
+              class="fas fa-search text-bluegreen"></i></button>
+        </div>
+        <!-- Search box for small screens (collapsed) -->
+        <div class="input-group d-lg-none">
+          <input type="text" class="form-control form-control-sm" id="navbarSearchInputMobile"
+            placeholder="Search for your favourite artist...">
+          <button class="btn btn-outline-light" type="button" id="navbarSearchButtonMobile"><i
+              class="fas fa-search text-bluegreen"></i></button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- main content for the page -->
+  <main class="container-fluid mt-5 p-0 pt-3" id="top">
+    <!-- lead text for the page -->
+    <div class="jumbotron jumbotron-fluid startImage">
+      <div class="container text-center mt-1">
+        <h1 class="display-4 py-5 text-light">Legal</h1>
+        <p class="lead py-5 text-light">whazam &#169; Andrew Hay, Biraj Adhikari, Christopher O’May, Kai Uerlichs, Lewis
+          McLean, Nicole Jackson</p>
+      </div>
+    </div>
+
+    <!-- featurette divider to make the page look organized and to divide the content -->
+    <hr class="featurette-divider">
+
+    <div class="container py-3">
+      <p class="py-3">The website makes sure to follow all the laws set in place for the distribution of websites set by
+        the Government and no personal data of the user is being used by any third party software or company.</p>
+      <div class="row row-cols-1 row-cols-md-3">
+        <div class="col mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Privacy Policy</h5>
+              <p class="card-text">The website doesn't take any information and No third party website or
+                software requires your data.</p>
+            </div>
+            <div class="card-footer">
+              <!-- triggers the modal -->
+              <a href="#" data-bs-toggle="modal" data-bs-target="#privacy">More info...</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Terms And Conditions</h5>
+              <p class="card-text">You can access the website from any browser and any device.</p>
+            </div>
+            <div class="card-footer">
+              <!-- triggers the modal -->
+              <a href="#" data-bs-toggle="modal" data-bs-target="#terms">More info...</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Copyright</h5>
+              <p class="card-text">We adhere to The Copyright, Designs and Patents Act 1988.</p>
+            </div>
+            <div class="card-footer">
+              <!-- triggers the modal -->
+              <a href="#" data-bs-toggle="modal" data-bs-target="#copyRight">More info...</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal for Privacy and Policy -->
+      <div class="modal fade" id="privacy" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="staticBackdropLabel">Privacy And Policy</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Since the website doesn't require the user to enter any personal information about them, we don't
+                register any data about the user. </p>
+              <p> The website is not linked to any third party software or company that requires user data.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal for Terms and Condition -->
+      <div class="modal fade" id="terms" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel1" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="staticBackdropLabel1">Terms and Conditions</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>The web page can be used from any browser and device with limited restrictions.</p>
+              <p>The page should not be used for anything other than searching for music and lyrics. And most
+                importantly, please make sure to have fun while using the page.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Modal for Copy Right -->
+      <div class="modal fade" id="copyRight" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel2" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="staticBackdropLabel2">Copyright</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>We have made sure to adhere by chapter 3 of The Copyright, Designs and Patents Act 1988. Which states
+                that we are allowed to use if we are: </p>
+              <p>28A.Making of temporary copies
+                <br>
+                28B.Personal copies for private use
+                <br>
+                29. Research and private study.
+                <br>
+                29A. Copies for text and data analysis for non-commercial research
+                <br>
+                30. Criticism, review, quotation and news reporting.
+                <br>
+                30A.Caricature, parody or pastiche
+                <br>
+                31. Incidental inclusion of copyright material.
+              </p>
+              <p>We fall under 29A</p>
+              <a href="https://www.legislation.gov.uk/ukpga/1988/48/contents">The Copyright, Designs and Patents Act
+                1988</a>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+  </main>
+
+  <!-- Create footer -->
+  <footer class="container-fluid text-light bg-independence">
+    <div class="container p-5">
+      <div class="row">
+        <!-- Logo and app area for large screens -->
+        <section class="d-none d-md-block col-md-3 text-start my-auto">
+          <a href="./index.html" class="invisble-link">
+            <h4><i class="fas fa-compact-disc text-bluegreen"></i> whazam</h4>
+          </a>
+          <a class="btn btn-secondary btn-bluegreen" href="./app.html">Install the app</a>
+        </section>
+        <!-- Logo and app area for small screens -->
+        <section class="d-md-none col-12 text-center">
+          <a href="./index.html" class="invisble-link">
+            <h4><i class="fas fa-compact-disc text-bluegreen"></i> whazam</h4>
+          </a>
+          <a class="btn btn-secondary btn-bluegreen" href="./app.html">Install the app</a>
+        </section>
+        <!-- Link area for large screens -->
+        <section class="d-none d-md-block offset-md-6 col-md-3 text-end">
+          <h5>Links to click!</h5>
+          <a class="footer-link" href="#top">Back to top</a><br>
+          <a class="footer-link" href="./favourites.html">Your Favourites</a><br>
+          <a class="footer-link" href="./about.html">About Us</a><br>
+          <a class="footer-link" href="./legal.html">Legal bits</a>
+        </section>
+        <!-- Link area for small screens -->
+        <section class="d-md-none col-12 text-center mt-5">
+          <h5>Links to click!</h5>
+          <a class="footer-link" href="#top">Back to top</a><br>
+          <a class="footer-link" href="./favourites.html">Your Favourites</a><br>
+          <a class="footer-link" href="./about.html">About Us</a><br>
+          <a class="footer-link" href="./legal.html">Legal bits</a>
+        </section>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/search.js" charset="utf-8"></script>
+
+</body>
+
+</html>
