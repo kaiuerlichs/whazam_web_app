@@ -54,15 +54,15 @@
                 <!-- Search box for large screens -->
                 <div class="input-group w-35 d-none d-lg-flex">
                     <input type="text" class="form-control form-control-sm"
-                        placeholder="Search for your favourite artist...">
-                    <button class="btn btn-outline-light" type="button" id="navbarSearchButton"><i
+                        placeholder="Search for your favourite artist..." id="navbarSearchInputDesktop">
+                    <button class="btn btn-outline-light" type="button" id="navbarSearchButtonDesktop"><i
                             class="fas fa-search text-bluegreen"></i></button>
                 </div>
                 <!-- Search box for small screens (collapsed) -->
                 <div class="input-group d-lg-none">
                     <input type="text" class="form-control form-control-sm"
-                        placeholder="Search for your favourite artist...">
-                    <button class="btn btn-outline-light" type="button" id="navbarSearchButton"><i
+                        placeholder="Search for your favourite artist..." id="navbarSearchInputMobile">
+                    <button class="btn btn-outline-light" type="button" id="navbarSearchButtonMobile"><i
                             class="fas fa-search text-bluegreen"></i></button>
                 </div>
             </div>
@@ -72,86 +72,129 @@
     <!-- Content should be placed inside this container to ensure the correct top margins and padding to avoid navbar overlap-->
     <main class="container-fluid mt-5 p-0 pt-3" id="top">
 
-        <!-- Top section to hold the album cover and album name and artist of said album -->
-        <section class="container-fluid bg-lightgrey p-0">
+        <!-- Output message if error occurs -->
+        <div v-if="errorOccured">
+            <div class="container py-5 my-5">
+                <div class="alert alert-danger" role="alert">
+                    <h4 class="alert-heading">Aww, that didn't work</h4>
+                    <p>It looks like we had a problem talking to our music specialists at TADb. We are sorry this
+                        happened, we will keep trying!</p>
+                    <hr>
+                    <p class="mb-0">Please try again later.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Output message if album is not found -->
+        <div v-else-if="notFound">
+            <div class="container py-5 my-5">
+                <div class="alert alert-warning" role="alert">
+                    <h4 class="alert-heading">Aw, we don't know this album yet</h4>
+                    <p>Unfortunately, our music specialists at TADb haven't discovered your favourite album yet. That's
+                        a
+                        shame, because we would love to it on our site!</p>
+                    <hr>
+                    <p class="mb-0">You can ask TADb to add the album to their database <a
+                            href="https://www.theaudiodb.com/" class="alert-link">here</a>!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- If album could be found, show this -->
+        <div v-else>
+            <!-- Top section to hold the album cover and album name and artist of said album -->
+            <section class="container-fluid bg-lightgrey p-0">
+
+                <div class="container py-5">
+                    <div class="row">
+
+                        <!-- Album cover -->
+                        <div class="offset-1 offset-lg-0 col-3">
+                            <img :src="album.strAlbumThumb" alt="" class="img-fluid rounded">
+                        </div>
+
+
+                        <!-- Album name followed by the artists name with a favourite button -->
+                        <div class="col-7 col-lg-8 my-auto ps-4">
+                            <h1>{{album.strAlbum}}
+                                <a v-if="!isFavourite" class="clickable" v-on:click="favourite()"><i
+                                        class="far fa-heart text-middlepink"></i></a>
+                                <a v-if="isFavourite" class="clickable" v-on:click="favourite()"><i
+                                        class="fas fa-heart text-middlepink"></i></a>
+                            </h1>
+                            <h2>by {{album.strArtist}}</h2>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <!--Lower section for the album details and details of tracks -->
             <div class="container py-5">
                 <div class="row">
 
-                    <!-- Album cover -->
-                    <div class="offset-1 offset-lg-0 col-3">
-                        <img src="https://picsum.photos/seed/picsum/400/400" alt="" class="img-fluid rounded">
-                    </div>
+                    <!-- "About the album" section -->
+                    <section class="col-12 col-lg-6">
+                        <h2>About the album</h2>
+                        <div v-if="album.intYearReleased">
+                            <h4>Released</h4>
+                            <p>{{album.intYearReleased}}</p>
+                        </div>
+                        <div v-if="album.strLabel">
+                            <h4>Label</h4>
+                            <p>{{album.strLabel}}</p>
+                        </div>
+                        <div v-if="album.strGenre">
+                            <h4>Genre</h4>
+                            <p>{{album.strGenre}}</p>
+                        </div>
+                        <div v-if="album.strStyle">
+                            <h4>Style</h4>
+                            <p>{{album.strStyle}}</p>
+                        </div>
+                        <div v-if="album.strMood">
+                            <h4>Mood</h4>
+                            <p>{{album.strMood}}</p>
+                        </div>
+                        <div v-if="album.strDescriptionEN">
+                            <h4>Description</h4>
+                            <p>{{album.strDescriptionEN}}</p>
+                        </div>
+                    </section>
 
+                    <!-- "Track list" section -->
+                    <section class="col-12 col-lg-6">
 
-                    <!-- Album name followed by the artists name with a favourite button -->
-                    <div class="col-7 col-lg-8 my-auto ps-4">
-                        <h1>Album name
-                            <a href="#"><i class="far fa-heart text-middlepink"></i></a>
-                        </h1>
-                        <h2>by artist</h2>
-                    </div>
+                        <!-- Message to be displayed if track list couldn't be found -->
+                        <div v-if="tracklistNotFound">
+                            <div class="container">
+                                <div class="alert alert-warning" role="alert">
+                                    <h4 class="alert-heading">Aw, we don't know this album's track list yet</h4>
+                                    <p>Unfortunately, our music specialists at TADb haven't discovered your favourite
+                                        yet. That's a
+                                        shame, because we would love to have them on our site!</p>
+                                    <hr>
+                                    <p class="mb-0">You can ask TADb to add the track list to their database <a
+                                            href="https://www.theaudiodb.com/" class="alert-link">here</a>!</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Display if track list was found -->
+                        <div v-else>
+                            <h2>Track list</h2>
+                            <!-- Loop card for all tracks -->
+                            <div class="card mb-2" v-for="track in tracks">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{track.intTrackNumber}}. {{track.strTrack}}</h5>
+                                </div>
+                                <a :href="'./track.html?id='+track.idTrack" class="stretched-link"></a>
+                            </div>
+                        </div>
+
+                    </section>
 
                 </div>
-            </div>
-        </section>
-        <!--Lower section for the ablum details and details of tracks -->
-        <div class="container py-5">
-            <div class="row">
-
-                <!-- "About the album" section -->
-                <section class="col-12 col-lg-6">
-                    <h2>About the album</h2>
-                    <h4>Element</h4>
-                    <p>Value</p>
-                    <h4>Element</h4>
-                    <p>Value</p>
-                    <h4>Element</h4>
-                    <p>Value</p>
-                    <h4>Element</h4>
-                    <p>Value</p>
-                </section>
-
-                <!-- "Track list" section -->
-                <section class="col-12 col-lg-6">
-                    <h2>Track list</h2>
-
-                    <div class="card mb-2">
-                        <div class="card-body">
-                            <h5 class="card-title">1. Track title</h5>
-                        </div>
-                        <a href="#" class="stretched-link"></a>
-                    </div>
-
-                    <div class="card mb-2">
-                        <div class="card-body">
-                            <h5 class="card-title">2. Track title</h5>
-                        </div>
-                        <a href="#" class="stretched-link"></a>
-                    </div>
-
-                    <div class="card mb-2">
-                        <div class="card-body">
-                            <h5 class="card-title">3. Track title</h5>
-                        </div>
-                        <a href="#" class="stretched-link"></a>
-                    </div>
-
-                    <div class="card mb-2">
-                        <div class="card-body">
-                            <h5 class="card-title">4. Track title</h5>
-                        </div>
-                        <a href="#" class="stretched-link"></a>
-                    </div>
-
-                    <div class="card mb-2">
-                        <div class="card-body">
-                            <h5 class="card-title">5. Track title</h5>
-                        </div>
-                        <a href="#" class="stretched-link"></a>
-                    </div>
-                    
-                </section>
-
             </div>
         </div>
 
@@ -200,7 +243,8 @@
     </footer>
 
     <!-- Custom script imports -->
-    <!-- will be added later -->
+    <script src="js/album.js"></script>
+    <script src="js/search.js"></script>
 
 </body>
 
