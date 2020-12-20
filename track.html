@@ -12,8 +12,11 @@
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
   <!-- Import Bootstrap CSS and JS plugins -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+    crossorigin="anonymous"></script>
 
   <!-- Import custom stylesheets -->
   <link rel="stylesheet" href="./css/master.css">
@@ -39,23 +42,27 @@
       <a class="navbar-brand feature" href="./index.html"><i class="fas fa-compact-disc text-bluegreen"></i>
         whazam</a>
       <!-- Collapse toggler -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <!-- Favourites button -->
         <div class="navbar-nav ms-auto me-5">
-          <a class="nav-link active feature" href="./favourites.html"><i class="far fa-heart text-middlepink"></i> Your favourites</a>
+          <a class="nav-link active feature" href="./favourites.html"><i class="far fa-heart text-middlepink"></i> Your
+            favourites</a>
         </div>
         <!-- Search box for large screens -->
-        <div class="input-group w-35 d-none d-lg-flex" id="navbarSearchInput">
+        <div class="input-group w-35 d-none d-lg-flex" id="navbarSearchInputDesktop">
           <input type="text" class="form-control form-control-sm" placeholder="Search for your favourite artist...">
-          <button class="btn btn-outline-light" type="button" id="navbarSearchButton"><i class="fas fa-search text-bluegreen"></i></button>
+          <button class="btn btn-outline-light" type="button" id="navbarSearchButtonDesktop"><i
+              class="fas fa-search text-bluegreen"></i></button>
         </div>
         <!-- Search box for small screens (collapsed) -->
-        <div class="input-group d-lg-none" id="navbarSearchInput">
+        <div class="input-group d-lg-none" id="navbarSearchInputMobile">
           <input type="text" class="form-control form-control-sm" placeholder="Search for your favourite artist...">
-          <button class="btn btn-outline-light" type="button" id="navbarSearchButton"><i class="fas fa-search text-bluegreen"></i></button>
+          <button class="btn btn-outline-light" type="button" id="navbarSearchButtonMobile"><i
+              class="fas fa-search text-bluegreen"></i></button>
         </div>
       </div>
     </div>
@@ -63,72 +70,133 @@
 
   <main class="container-fluid mt-5 p-0" id="app">
 
-
-
-
-      <!--container for light grey area-->
-<div class="container-fluid bg-lightgrey">
-
-
-<div class="container py-5">
-
-
-      <div class="row mt-3">
-        <div class="offset-1 offset-lg-0 col-3">
-
-<!--Random album cover just now for sizing-->
-            <img :src="album.strAlbumThumb" class="album-pic img-fluid w-100"  alt="Album Cover">
-          </div>
-
-          <!--song title and album/artist-->
-        <div class="col-7 col-lg-8 my-auto">
-          <h1 class="song-title">{{track.strTrack}}<a v-if="!isFavourite" class="clickable" v-on:click="favourite()"><i class="far fa-heart fa-sm text-middlepink ps-2"></i></a></h1>
-          <h2 class="album-artist">{{track.strAlbum}}/{{track.strArtist}}</h2>
+    <!-- Output message if error occurs -->
+    <div v-if="errorOccured">
+      <div class="container py-5 my-5">
+        <div class="alert alert-danger" role="alert">
+          <h4 class="alert-heading">Aww, that didn't work</h4>
+          <p>It looks like we had a problem talking to our music specialists at TADb. We are sorry this
+            happened, we will keep trying!</p>
+          <hr>
+          <p class="mb-0">Please try again later.</p>
         </div>
-      </div>
-      </div>
-
-  </div>
-
-
-<div class="container bg-white">
-
-
-      <!--song info heading-->
-      <div class="row bg-white">
-      <section class="col-12 col-lg-6 mt-2 p-3">
-          <h2>Song Information</h2>
-        </section>
-
-        <!--lyrics heading-->
-        <section class="col-12 col-lg-6 d-none d-lg-block mt-2 p-3">
-          <h2>Lyrics</h2>
-        </section>
-      </div>
-
-      <!--box for song info-->
-      <div class="row bg-white">
-        <section class="col-12 col-lg-6 p-3 mb-3">
-          <div class="box" id="info">
-            <h4>Year released:</h4><p>{{album.intYearReleased}}</p>
-            <h4>Track number:</h4><p>{{track.intTrackNumber}}</p>
-            <h4>Genres:</h4><p>{{track.strGenre}}</p>
-            <h4>Record label:</h4><p>{{album.strLabel}}</p>
-          </div>
-          </section>
-
-
-        <!--box for lyrics-->
-        <section class="col-12 col-lg-6 p-3 mb-3">
-          <div class="box" id="lyrics">
-            <h2 class="d-lg-none">Lyrics</h2>
-            <p>{{lyrics.lyrics}}</p>
-          </div>
-        </section>
       </div>
     </div>
 
+    <!-- Output message if track is not found -->
+    <div v-else-if="trackNotFound">
+      <div class="container py-5 my-5">
+        <div class="alert alert-warning" role="alert">
+          <h4 class="alert-heading">Aw, we don't know this track yet</h4>
+          <p>Unfortunately, our music specialists at TADb haven't discovered your favourite yet. That's a
+            shame, because we would love to have them on our site!</p>
+          <hr>
+          <p class="mb-0">You can ask TADb to add the track to their database <a href="https://www.theaudiodb.com/"
+              class="alert-link">here</a>!</p>
+        </div>
+      </div>
+    </div>
 
+    <div v-else>
+      <!--container for light grey area-->
+      <div class="container-fluid bg-lightgrey">
+
+
+        <div class="container py-5">
+
+
+          <div class="row mt-3">
+            <div class="offset-1 offset-lg-0 col-3">
+
+              <!--Random album cover just now for sizing-->
+              <img :src="album.strAlbumThumb" class="album-pic img-fluid w-100" alt="Album Cover">
+            </div>
+
+            <!--song title and album/artist-->
+            <div class="col-7 col-lg-8 my-auto ps-4">
+              <h1 class="song-title">{{track.strTrack}}
+                <a v-if="!isFavourite" class="clickable" v-on:click="favourite()"><i
+                    class="far fa-heart text-middlepink"></i></a>
+                <a v-if="isFavourite" class="clickable" v-on:click="favourite()"><i
+                    class="fas fa-heart text-middlepink"></i></a>
+              </h1>
+              <h2 class="album-artist">{{track.strAlbum}}/{{track.strArtist}}</h2>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="container bg-white">
+
+
+        <!--song info heading-->
+        <div class="row bg-white">
+          <section class="col-12 col-lg-6 mt-2 p-3">
+            <h2>Song Information</h2>
+          </section>
+
+          <!--lyrics heading-->
+          <section class="col-12 col-lg-6 d-none d-lg-block mt-2 p-3">
+            <h2>Lyrics</h2>
+          </section>
+        </div>
+
+        <!--box for song info-->
+        <div class="row bg-white">
+          <section class="col-12 col-lg-6 p-3 mb-3">
+            <div class="box" id="info">
+              <div v-if="album.intYearReleased">
+                <h4>Year released</h4>
+                <p>{{album.intYearReleased}}</p>
+              </div>
+              <div v-if="track.intTrackNumber">
+                <h4>Track number</h4>
+                <p>{{track.intTrackNumber}}</p>
+              </div>
+              <div v-if="track.strGenre">
+                <h4>Genre</h4>
+                <p>{{track.strGenre}}</p>
+              </div>
+              <div v-if="album.strLabel">
+                <h4>Record label</h4>
+                <p>{{album.strLabel}}</p>
+              </div>
+            </div>
+          </section>
+
+
+          <!--box for lyrics-->
+          <section class="col-12 col-lg-6 p-3 mb-3">
+
+            <div class="box" id="lyrics">
+              <h2 class="d-lg-none">Lyrics</h2>
+
+              <!-- Display if no lyrics are found -->
+              <div v-if="lyricsNotFound">
+                <div class="alert alert-warning" role="alert">
+                  <h4 class="alert-heading">Aw, we don't the words this track yet</h4>
+                  <p>Unfortunately, our music specialists at lyrics.ovh haven't discovered your favourite yet. That's a
+                    shame, because we would love to have them on our site!</p>
+                  <hr>
+                  <p class="mb-0">You can ask lyrics.ovh to add the track to their database <a href="https://www.lyrics.ovh"
+                      class="alert-link">here</a>!</p>
+                </div>
+              </div>
+
+              <!-- Otherwise show lyrics -->
+              <div v-else>
+                <p>{{lyrics}}</p>
+              </div>
+
+            </div>
+
+          </section>
+
+        </div>
+      </div>
+    </div>
 
   </main>
 

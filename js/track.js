@@ -1,101 +1,163 @@
-new Vue({
-  el: '#app',
-  data: {
-    track: [],
-    album: [],
-    lyrics,
-    isFavourite: false
-  },
+let app = new Vue({
+    el: '#app',
+    data: {
+        track: [],
+        album: [],
+        lyrics: "",
+        isFavourite: false,
+        lyricsNotFound: false,
+        errorOccured: false,
+        trackNotFound: false
+    },
 
-  created() {
+    created() {
 
-    let vm = this;
+        let app = this;
 
-    let id = window.location.href.split("id=")[1]
+        let id = window.location.href.split("id=")[1]
 
-    .then(function(response){
-      vm.track = response.data.track[0]
-      window.document.title = app.artist.strArtist + " ● whazam";
-       vm.checkFavourite();
-
-    })
-
-    axios.get('https://www.theaudiodb.com/api/v1/json/1/track.php?h=' + id)
-      .then(function (response) {
-        vm.track = response.data.track[0]
-        console.log(vm.track)
-
-      })
-
-    axios.get('https://theaudiodb.com/api/v1/json/1/album.php?m=' + id)
-      .then(function (response) {
-        vm.album = response.data.album[0]
-        console.log(vm.album)
-      })
-
-      axios.get('https://api.lyrics.ovh/v1/The weeknd/D.D.')
-      .then(function(response){
-        vm.lyrics = response.data.lyrics
-        console.log(vm.lyrics)
-      })
-  },
-
-  methods: {
-        favourite: function(){
-            if(!vm.isFavourite){
-                let favouriteArtists = localStorage.getItem("favouriteArtists");
-                if (favouriteArtists === null) {
-                    let data = [];
-                    data.push(vm.track.idTrack)
-                    localStorage.setItem("favouriteArtists", JSON.stringify(data));
+        axios.get('https://www.theaudiodb.com/api/v1/json/1/track.php?h=' + id)
+            .then(function (response) {
+                if (response.data.track === null) { 
+                    app.trackNotFound = true;
+                    window.document.title = "Sorry :( ● whazam"
                 }
-                else{
-                    favouriteArtists = JSON.parse(favouriteArtists);
-                    let data = favouriteArtists;
+                else {
+                    app.track = response.data.track[0]
+                    window.document.title = app.track.strTrack + " ● whazam";
+                    app.checkFavourite();
+                    app.getAlbum();
+                    app.getLyrics();
+                }
+            })
+            .catch(error => {
+                app.errorOccured = true;
+                window.document.title = "Sorry :( ● whazam"
+                console.log(error)
+            })
+    },
+
+    methods: {
+
+        getAlbum: function () {
+            axios.get('https://theaudiodb.com/api/v1/json/1/album.php?m=' + app.track.idAlbum)
+                .then(function (response) {
+                    app.album = response.data.album[0];
+                })
+        },
+
+        getLyrics: function () {
+            let cachedLyrics = localStorage.getItem("cachedLyrics");
+            if (cachedLyrics === null) {
+                let data = [];
+                localStorage.setItem("cachedLyrics", JSON.stringify(data));
+            }
+            cachedLyrics = JSON.parse(localStorage.getItem("cachedLyrics"));
+
+            let index = null;
+            for (i = 0; i < cachedLyrics.length; i++) {
+                if (cachedLyrics[i][0] === app.track.idTrack) {
+                    index = i;
+                }
+            }
+            
+            if (index !== null) {
+                app.lyrics = cachedLyrics[index][1];
+            }
+            else {
+                axios.get('https://api.lyrics.ovh/v1/' + app.track.strArtist + "/" + app.track.strTrack)
+                    .then(function (response) {
+                        console.log(response.data.lyrics);
+                        if (response.data.lyrics === "") {
+                            app.lyricsNotFound = true;
+                        }
+                        else {
+                            app.lyrics = response.data.lyrics;
+                            cachedLyrics.push([app.track.idTrack, app.lyrics]);
+                            localStorage.setItem("cachedLyrics", JSON.stringify(cachedLyrics));
+                        }
+                    })
+            }
+
+        },
+
+        // Toggle favourite stage
+        favourite: function () {
+
+            // If artist isnt favourite
+            if (!app.isFavourite) {
+
+                // Get localStorage object
+                let favouriteTracks = localStorage.getItem("favouriteTracks");
+
+                // Create local storage object if it doesnt exist
+                if (favouriteTracks === null) {
+                    let data = [];
+                    data.push(app.track.idTrack)
+                    localStorage.setItem("favouriteTracks", JSON.stringify(data));
+                }
+
+                // Add artist ID to local storage
+                else {
+                    favouriteTracks = JSON.parse(favouriteTracks);
+                    let data = favouriteTracks;
 
                     let found = false;
-                    for(i=0; i<data.length; i++){
-                        if(data[i] === vm.track.idTrack){
+                    for (i = 0; i < data.length; i++) {
+                        if (data[i] === app.track.idTrack) {
                             found = true;
                         }
                     }
-                    if(!found){
-                        data.push(vm.track.idTrack)
-                        localStorage.setItem("favouriteArtists", JSON.stringify(data));
+                    if (!found) {
+                        data.push(app.track.idTrack)
+                        localStorage.setItem("favouriteTracks", JSON.stringify(data));
                     }
                 }
             }
-            else{
-                let favouriteArtists = localStorage.getItem("favouriteArtists");
-                favouriteArtists = JSON.parse(favouriteArtists);
-                let data = favouriteArtists;
+
+            // If artist is favourite
+            else {
+                // Retrieve localStorage
+                let favouriteTracks = localStorage.getItem("favouriteTracks");
+                favouriteTracks = JSON.parse(favouriteTracks);
+                let data = favouriteTracks;
+
+                // Find right item in localStorage
                 let found = null;
-                for(i=0; i<data.length; i++){
-                    if(data[i] === vm.track.idTrack){
+                for (i = 0; i < data.length; i++) {
+                    if (data[i] === app.track.idTrack) {
                         found = i;
                     }
                 }
-                if(found !== null){
+
+                // Remove from local storage
+                if (found !== null) {
                     data.splice(found, 1);
-                    localStorage.setItem("favouriteArtists", JSON.stringify(data));
+                    localStorage.setItem("favouriteTracks", JSON.stringify(data));
                 }
             }
             app.checkFavourite();
         },
-        checkFavourite: function(){
-            let favouriteArtists = localStorage.getItem("favouriteArtists");
-            if (favouriteArtists !== null) {
-                favouriteArtists = JSON.parse(favouriteArtists);
-                let data = favouriteArtists;
+
+        // Check if artist is favourite
+        checkFavourite: function () {
+            let favouriteTracks = localStorage.getItem("favouriteTracks");
+
+            // If localStorage item exists
+            if (favouriteTracks !== null) {
+                favouriteTracks = JSON.parse(favouriteTracks);
+
+                let data = favouriteTracks;
                 let found = false;
-                for(i=0; i<data.length; i++){
-                    if(data[i] === vm.artist.idArtist){
+
+                // Search for artist
+                for (i = 0; i < data.length; i++) {
+                    if (data[i] === app.track.idTrack) {
                         found = true;
                     }
                 }
                 app.isFavourite = found;
             }
-      }
-    },
-
+        }
+    }
 })
